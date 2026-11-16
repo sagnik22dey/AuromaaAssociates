@@ -1,0 +1,95 @@
+<nav id="main-nav" class="sticky top-0 left-0 w-full z-40 bg-navy-900/95 backdrop-blur-md shadow-md border-b border-slate-800 px-6 lg:px-12 py-3.5">
+  <div class="max-w-[1280px] mx-auto flex items-center justify-between">
+
+    <a class="flex items-center space-x-3.5 group" href="/">
+      <img src="/static/images/logo.png" alt="Auromaa Associates Logo" class="h-11 w-auto max-w-[50px] object-contain"/>
+      <div class="flex flex-col">
+        <span class="font-headline text-[19px] font-bold text-white tracking-tight leading-none group-hover:text-gold-400 transition-colors">Auromaa Associates</span>
+        <span class="font-nav text-[10px] font-semibold text-gold-400 tracking-widest uppercase mt-1">Advocates &amp; IP Attorneys</span>
+      </div>
+    </a>
+
+    <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
+      <a class="nav-link {% if active_page == 'home' %}active{% endif %}" href="/">Home</a>
+      <div class="relative group">
+        <a class="nav-link {% if active_page in ['the-firm', 'our-mission', 'our-vision', 'our-values', 'our-quality-policy', 'awards', 'testimonials', 'gallery', 'our-team', 'advisors-instructors', 'partners', 'our-associate-partner', 'experts', 'attorneys-support-staff'] %}active{% endif %} flex items-center gap-1" href="/the-firm">
+          The Firm
+          <span class="material-symbols-outlined text-xs" style="font-size:14px">expand_more</span>
+        </a>
+        <div class="absolute top-full left-0 mt-1 w-64 bg-navy-950 border border-slate-800 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
+          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/the-firm#mission">Our Mission</a>
+          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/the-firm#vision">Our Vision</a>
+          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/the-firm#values">Our Values</a>
+          <div class="relative group/sub">
+            <a class="dropdown-link flex items-center justify-between hover:text-gold-400 hover:bg-navy-900" href="/our-team">
+              <span>Our Team</span>
+              <span class="material-symbols-outlined text-xs" style="font-size:14px">chevron_right</span>
+            </a>
+            <div class="absolute top-0 left-full ml-1 w-64 bg-navy-950 border border-slate-800 rounded-lg shadow-2xl opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 z-50 py-2">
+              <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/our-team#advisors">Advisors/Instructors</a>
+              <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/our-team#partners">Partners</a>
+              <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/our-team#associate-partner">Our Associate Partner</a>
+              <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/our-team#experts">Experts</a>
+              <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/our-team#support-staff">Attorneys &amp; Support Staff</a>
+            </div>
+          </div>
+          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/the-firm#quality-policy">Our Quality Policy</a>
+          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/the-firm#awards">Awards</a>
+          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/the-firm#testimonials">Testimonials</a>
+          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/the-firm#gallery">Gallery</a>
+        </div>
+      </div>
+      <div class="relative group">
+        <a class="nav-link {% if active_page == 'practice-areas' %}active{% endif %} flex items-center gap-1" href="/practice-areas">
+          Practice Areas
+          <span class="material-symbols-outlined text-xs" style="font-size:14px">expand_more</span>
+        </a>
+        <div class="absolute top-full left-0 mt-1 w-64 bg-navy-900 border border-slate-700 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
+          <a class="dropdown-link" href="/practice-areas/trademark">Trademark Registration &amp; Protection</a>
+          <a class="dropdown-link" href="/practice-areas/patent">Patent Filing &amp; Prosecution</a>
+          <a class="dropdown-link" href="/practice-areas/copyright">Copyright Registration</a>
+          <a class="dropdown-link" href="/practice-areas/industrial-design">Industrial Design Registration</a>
+          <a class="dropdown-link" href="/practice-areas/geographical-indications">Geographical Indications</a>
+          <a class="dropdown-link" href="/practice-areas/plant-varieties">Plant Varieties &amp; Farmers' Rights</a>
+          <a class="dropdown-link" href="/practice-areas/semiconductor-ic-layout">Semiconductor IC Layout Designs</a>
+        </div>
+      </div>
+      <a class="nav-link {% if active_page == 'ipr-abstract' %}active{% endif %}" href="/ipr-abstract">IPR Abstract</a>
+      <a class="nav-link {% if active_page == 'faq' %}active{% endif %}" href="/faq">FAQ</a>
+      <a class="nav-link {% if active_page == 'news' %}active{% endif %}" href="/news">News</a>
+      <a class="nav-link {% if active_page == 'blog' %}active{% endif %}" href="/blog">Blog</a>
+      <a class="nav-link {% if active_page == 'contact' %}active{% endif %}" href="/contact">Contact</a>
+    </div>
+
+    <div class="flex items-center space-x-3">
+      <a class="hidden sm:inline-flex bg-gold-500 hover:bg-gold-400 text-navy-950 px-5 py-2.5 rounded-lg font-nav text-[11px] font-bold transition-all duration-150 shadow-sm active:scale-95 uppercase tracking-wider" href="#enquiry">
+        Request a Callback
+      </a>
+      <button id="mobile-menu-btn" class="lg:hidden text-white p-2 rounded" aria-label="Toggle menu">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="lg:hidden hidden border-t border-slate-800 mt-3 pt-3 pb-2 space-y-1">
+    <a class="mobile-nav-link" href="/">Home</a>
+    <div class="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-gold-400">The Firm</div>
+    <div class="pl-4 space-y-1">
+      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm#overview">Firm Overview</a>
+      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm#mission">Our Mission</a>
+      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm#vision">Our Vision</a>
+      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm#values">Our Values</a>
+      <a class="mobile-nav-link text-sm py-1.5" href="/our-team">Our Team</a>
+      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm#quality-policy">Our Quality Policy</a>
+      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm#awards">Awards</a>
+      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm#testimonials">Testimonials</a>
+      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm#gallery">Gallery</a>
+    </div>
+    <a class="mobile-nav-link" href="/practice-areas">Practice Areas</a>
+    <a class="mobile-nav-link" href="/ipr-abstract">IPR Abstract</a>
+    <a class="mobile-nav-link" href="/faq">FAQ</a>
+    <a class="mobile-nav-link" href="/news">News</a>
+    <a class="mobile-nav-link" href="/blog">Blog</a>
+    <a class="mobile-nav-link" href="/contact">Contact</a>
+  </div>
+</nav>

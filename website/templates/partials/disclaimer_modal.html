@@ -1,0 +1,62 @@
+<div id="disclaimer-overlay" class="fixed inset-0 z-[9999] {% if disclaimer_agreed or (active_page != 'home') %}hidden{% else %}flex{% endif %} items-center justify-center bg-navy-950/85 backdrop-blur-sm px-4" role="dialog" aria-modal="true" aria-labelledby="disclaimer-title" {% if disclaimer_agreed or (active_page != 'home') %}style="display: none;"{% endif %}>
+  <div class="bg-surface-container-lowest rounded-2xl shadow-2xl max-w-2xl w-full border border-slate-200 overflow-hidden">
+    <div class="bg-navy-900 px-8 py-6 border-b border-slate-700 flex items-center space-x-3">
+      <span class="material-symbols-outlined text-gold-400 text-2xl">gavel</span>
+      <div id="disclaimer-title" class="font-headline text-2xl font-semibold text-white tracking-tight">Disclaimer</div>
+    </div>
+
+    <div class="px-8 py-6 space-y-4 max-h-[60vh] overflow-y-auto">
+      <p class="font-body text-sm text-slate-700 leading-relaxed">
+        As per the rules of the Bar Council of India, Auromaa Associates and its advocates are not permitted to solicit work or advertise. By clicking <strong>"I Agree"</strong>, you acknowledge and confirm that:
+      </p>
+      <ul class="space-y-3 font-body text-sm text-slate-700">
+        <li class="flex items-start space-x-3">
+          <span class="material-symbols-outlined text-gold-500 text-base mt-0.5 shrink-0" style="font-size:18px">check_circle</span>
+          <span>You are accessing this website of your own accord to seek information about Auromaa Associates. There has been no advertisement, solicitation, invitation or inducement of any kind from the firm or its members.</span>
+        </li>
+        <li class="flex items-start space-x-3">
+          <span class="material-symbols-outlined text-gold-500 text-base mt-0.5 shrink-0" style="font-size:18px">check_circle</span>
+          <span>The content on this website is for general information only and is not legal advice. Using this website, or contacting us through it, does not create an advocate–client relationship.</span>
+        </li>
+        <li class="flex items-start space-x-3">
+          <span class="material-symbols-outlined text-gold-500 text-base mt-0.5 shrink-0" style="font-size:18px">check_circle</span>
+          <span>Any information you send through this website or by email, before we formally agree to act for you, will not be treated as confidential or privileged.</span>
+        </li>
+        <li class="flex items-start space-x-3">
+          <span class="material-symbols-outlined text-gold-500 text-base mt-0.5 shrink-0" style="font-size:18px">check_circle</span>
+          <span>Auromaa Associates is not liable for the consequences of any action taken on the basis of this website’s content. You should seek independent legal advice for your specific situation.</span>
+        </li>
+        <li class="flex items-start space-x-3">
+          <span class="material-symbols-outlined text-gold-500 text-base mt-0.5 shrink-0" style="font-size:18px">check_circle</span>
+          <span>Links to third-party websites are provided for convenience only. The firm does not endorse, and is not responsible for, their content.</span>
+        </li>
+        <li class="flex items-start space-x-3">
+          <span class="material-symbols-outlined text-gold-500 text-base mt-0.5 shrink-0" style="font-size:18px">check_circle</span>
+          <span>All content on this website is the intellectual property of Auromaa Associates and may not be reproduced without written permission.</span>
+        </li>
+        <li class="flex items-start space-x-3">
+          <span class="material-symbols-outlined text-gold-500 text-base mt-0.5 shrink-0" style="font-size:18px">check_circle</span>
+          <span>Auromaa Associates confirms that the information about the firm, its advocates and its practice areas on this website is true and accurate.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="px-8 py-5 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row gap-3 justify-end items-center">
+      <button
+        id="disclaimer-exit"
+        type="button"
+        onclick="if (window.history.length > 1) { window.history.back(); } else { window.close(); }"
+        class="w-full sm:w-auto px-6 py-2.5 rounded-lg border border-slate-300 text-slate-700 font-nav text-xs font-semibold uppercase tracking-wider hover:bg-slate-100 transition-colors"
+      >
+        Exit
+      </button>
+      <button
+        id="disclaimer-agree"
+        type="button"
+        class="w-full sm:w-auto px-8 py-2.5 rounded-lg bg-gold-500 hover:bg-gold-400 text-navy-950 font-nav text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95"
+      >
+        I Agree
+      </button>
+    </div>
+  </div>
+</div>

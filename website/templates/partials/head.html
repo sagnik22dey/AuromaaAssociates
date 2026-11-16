@@ -1,0 +1,104 @@
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="theme-color" content="#080E1A"/>
+<meta name="robots" content="{{ meta_robots | default('index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1') }}"/>
+
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ meta_description }}"/>
+<link rel="canonical" href="{{ canonical_url }}"/>
+
+<meta property="og:locale" content="en_IN"/>
+<meta property="og:type" content="{{ og_type | default('website') }}"/>
+<meta property="og:title" content="{{ page_title }}"/>
+<meta property="og:description" content="{{ meta_description }}"/>
+<meta property="og:url" content="{{ canonical_url }}"/>
+<meta property="og:site_name" content="Auromaa Associates"/>
+<meta property="og:image" content="{{ og_image | default('https://www.auromaaassociates.com/static/images/logo.png') }}"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Auromaa Associates Intellectual Property Law Firm"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="{{ page_title }}"/>
+<meta name="twitter:description" content="{{ meta_description }}"/>
+<meta name="twitter:image" content="{{ og_image | default('https://www.auromaaassociates.com/static/images/logo.png') }}"/>
+<meta name="twitter:image:alt" content="Auromaa Associates Intellectual Property Law Firm"/>
+
+{% include "partials/schema.html" %}
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "navy-950":         "#080E1A",
+        "navy-900":         "#0F172A",
+        "navy-800":         "#1E293B",
+        "gold-500":         "#C5A059",
+        "gold-400":         "#D4AF37",
+        "gold-100":         "#FDF8EC",
+        "slate-700":        "#334155",
+        "slate-400":        "#94A3B8",
+        "slate-200":        "#E2E8F0",
+        "navy":             "#0F172A",
+        "maroon":           "#1E293B",
+        "gold":             "#D4AF37",
+        "gold-hover":       "#C5A059",
+        "primary":          "#080E1A",
+        "primary-container":"#0F172A",
+        "secondary":        "#C5A059",
+        "secondary-hover":  "#D4AF37",
+        "tertiary":         "#C5A059",
+        "tertiary-fixed":   "#D4AF37",
+        "tertiary-fixed-dim":"#C5A059",
+        "surface-container-lowest":"#ffffff",
+        "surface-container-low":"#f8fafc",
+        "surface-container":"#f1f5f9",
+        "surface-container-high":"#e2e8f0",
+        "surface-container-highest":"#cbd5e1",
+        "on-background":    "#0f172a",
+        "background":       "#f8fafc",
+        "surface":          "#f8fafc",
+        "on-surface":       "#0f172a",
+        "on-surface-variant":"#475569",
+        "outline":          "#64748b",
+        "outline-variant":  "#94a3b8",
+        "surface-dim":      "#94a3b8",
+        "on-primary-container":"#94a3b8",
+        "on-primary":       "#ffffff",
+        "on-secondary":     "#080E1A"
+      },
+      borderRadius: {
+        "DEFAULT": "0.25rem",
+        "lg": "0.375rem",
+        "xl": "0.5rem",
+        "2xl": "0.75rem",
+        "full": "9999px"
+      },
+      fontFamily: {
+        "headline": ["Newsreader", "Bitter", "Georgia", "serif"],
+        "body":     ["Montserrat", "system-ui", "sans-serif"],
+        "nav":      ["Work Sans", "sans-serif"]
+      }
+    }
+  }
+}
+</script>
+
+<link rel="stylesheet" href="/static/css/styles.css"/>
+<script>
+(function() {
+  var match = document.cookie.match(/(^| )auromaa_disclaimer_agreed=([^;]+)/);
+  var isAgreed = (match && match[2] === "true") || (localStorage.getItem("auromaa_disclaimer_agreed") === "true");
+  if (isAgreed) {
+    document.documentElement.classList.add("disclaimer-agreed");
+  }
+})();
+</script>

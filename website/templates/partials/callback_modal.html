@@ -1,0 +1,71 @@
+<div id="callback-modal" class="fixed inset-0 z-[9998] hidden items-center justify-center bg-navy-950/70 backdrop-blur-sm px-4" role="dialog" aria-modal="true" aria-labelledby="callback-title">
+  <div class="bg-navy-900 rounded-2xl shadow-2xl max-w-md w-full border border-slate-700 overflow-hidden">
+    <div class="px-8 py-5 border-b border-slate-800 flex items-center justify-between">
+      <div id="callback-title" class="font-headline text-xl font-semibold text-white tracking-tight">Request a Callback</div>
+      <button id="callback-close" type="button" class="text-slate-400 hover:text-white transition-colors" aria-label="Close modal">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <form id="callback-form" class="px-8 py-6 space-y-4">
+      <div>
+        <label class="block font-nav text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="cb-name">Full Name *</label>
+        <input class="callback-input" id="cb-name" name="name" placeholder="Your full name" required type="text"/>
+      </div>
+      <div>
+        <label class="block font-nav text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="cb-phone">Phone Number *</label>
+        <input class="callback-input" id="cb-phone" name="phone" placeholder="+91 98300 00000" required type="tel"/>
+      </div>
+      <div>
+        <label class="block font-nav text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1.5" for="cb-area">Area of Interest *</label>
+        <select class="callback-input" id="cb-area" name="area_of_interest" required>
+          <option value="Trademark">Trademark</option>
+          <option value="Patent">Patent</option>
+          <option value="Copyright">Copyright</option>
+          <option value="Design">Design</option>
+          <option value="GI">GI</option>
+          <option value="Plant Variety">Plant Variety</option>
+          <option value="IC Layout">IC Layout</option>
+          <option value="Litigation">Litigation</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="flex items-start space-x-3 pt-1">
+        <input class="mt-1 rounded bg-navy-950 border-slate-600 text-gold-500 focus:ring-gold-500" id="cb-consent" name="consent" required type="checkbox" value="true"/>
+        <label class="text-xs text-slate-300 font-body leading-relaxed" for="cb-consent">
+          I have read and agree to the <a class="underline hover:text-gold-400" href="/disclaimer">Disclaimer</a> and <a class="underline hover:text-gold-400" href="/privacy-policy">Privacy Policy</a>, and I consent to Auromaa Associates using these details to respond to my enquiry.
+        </label>
+      </div>
+      <button class="w-full bg-gold-500 hover:bg-gold-400 text-navy-950 py-3.5 px-6 rounded-lg font-nav text-xs font-bold uppercase tracking-wider shadow-lg transition-all active:scale-[0.98] mt-2" type="submit">
+        Request Callback
+      </button>
+      <p id="callback-success" class="hidden text-center text-xs text-gold-400 font-nav font-semibold pt-2">
+        ✓ Thank you. We have received your request and will call you back shortly.
+      </p>
+      <p id="callback-error" class="hidden text-center text-xs text-red-400 font-nav font-semibold pt-2"></p>
+    </form>
+  </div>
+</div>
+
+<div id="floating-elements" class="hidden">
+  <div class="fixed bottom-6 right-6 z-40 hidden sm:flex flex-col items-end space-y-3">
+    <button
+      id="bottom-callback-btn"
+      type="button"
+      class="flex items-center space-x-2.5 bg-navy-900 border border-gold-500/40 hover:border-gold-400 text-white hover:text-gold-400 px-5 py-3 rounded-full shadow-2xl transition-all duration-200 active:scale-95 group"
+    >
+      <span class="material-symbols-outlined text-gold-400 group-hover:rotate-12 transition-transform duration-200">call</span>
+      <span class="font-nav text-xs font-bold uppercase tracking-wider">Request a Callback</span>
+    </button>
+  </div>
+
+  <div class="fixed bottom-0 left-0 right-0 z-40 sm:hidden flex border-t border-slate-800 shadow-2xl">
+    <a href="tel:+913340693025" class="flex-1 bg-navy-900 text-white hover:text-gold-400 flex items-center justify-center space-x-2 py-4 font-nav text-xs font-bold uppercase tracking-wider border-r border-slate-800">
+      <span class="material-symbols-outlined text-gold-400" style="font-size:20px">call</span>
+      <span>Call Now</span>
+    </a>
+    <a href="https://wa.me/913340693025" target="_blank" rel="noreferrer" class="flex-1 bg-navy-950 text-white hover:text-gold-400 flex items-center justify-center space-x-2 py-4 font-nav text-xs font-bold uppercase tracking-wider">
+      <svg class="w-4 h-4 fill-current text-gold-400" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  {% include "partials/head.html" %}
+</head>
+<body class="bg-background text-on-surface antialiased flex flex-col min-h-screen">
+  {% include "partials/disclaimer_modal.html" %}
+  {% include "partials/callback_modal.html" %}
+  {% include "partials/topbar.html" %}
+  {% include "partials/nav.html" %}
+
+  <main class="flex-1 py-16 md:py-24 px-6 lg:px-12 max-w-[1280px] mx-auto w-full">
+    <div class="mb-8">
+      <nav class="flex items-center space-x-2 text-xs font-nav text-slate-500 uppercase tracking-wider mb-4" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-gold-500 transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">{{ page_title }}</span>
+      </nav>
+      <span class="text-gold-500 font-nav text-xs font-bold uppercase tracking-widest block mb-2">Auromaa Associates IP Practice</span>
+      <h1 class="font-headline text-3xl md:text-5xl font-semibold text-navy-950 mb-6 tracking-tight leading-tight">
+        {{ page_title }}
+      </h1>
+      <div class="w-16 h-1 bg-gold-500 rounded mb-8"></div>
+    </div>
+
+    <div class="bg-white border border-slate-200 rounded-2xl p-8 md:p-14 shadow-sm">
+      <div class="max-w-3xl space-y-6 text-slate-700 font-body text-base leading-relaxed">
+        <p class="text-lg font-light text-slate-800 leading-relaxed">
+          {{ meta_description }}
+        </p>
+        <p>
+          Auromaa Associates advises domestic and international clients on all aspects of intellectual property protection, registration, prosecution, and contentious dispute resolution across India.
+        </p>
+        <div class="pt-6 border-t border-slate-200 flex flex-col sm:flex-row gap-4">
+          <a class="inline-flex items-center justify-center space-x-2 bg-gold-500 hover:bg-gold-400 text-navy-950 px-6 py-3.5 rounded-lg font-nav text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95" href="/#enquiry">
+            <span>Speak to an IP Lawyer</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+          <a class="inline-flex items-center justify-center space-x-2 bg-slate-100 hover:bg-slate-200 text-navy-950 px-6 py-3.5 rounded-lg font-nav text-xs font-bold uppercase tracking-wider transition-all" href="/">
+            <span class="material-symbols-outlined text-sm">arrow_back</span>
+            <span>Return to Home</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  {% include "partials/footer.html" %}
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
