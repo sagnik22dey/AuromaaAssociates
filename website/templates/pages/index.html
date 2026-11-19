@@ -1,461 +1,1043 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="scroll-smooth" lang="en">
-<head>
-  {% include "partials/head.html" %}
-</head>
-<body class="bg-background text-on-surface antialiased">
+  <head>
+    {% include "partials/head.html" %}
+  </head>
+  <body class="bg-background text-on-surface antialiased">
+    {% include "partials/disclaimer_modal.html" %} {% include
+    "partials/callback_modal.html" %} {% include "partials/topbar.html" %} {%
+    set active_page = "home" %} {% include "partials/nav.html" %}
 
-  {% include "partials/disclaimer_modal.html" %}
-  {% include "partials/callback_modal.html" %}
-  {% include "partials/topbar.html" %}
-  {% set active_page = "home" %}
-  {% include "partials/nav.html" %}
-
-  <section class="relative min-h-[85vh] flex items-center justify-center bg-navy-950 text-white overflow-hidden" id="hero">
-    <div class="hero-slider w-full h-full absolute inset-0">
-      <div class="hero-slide active absolute inset-0" style="background:linear-gradient(rgba(8,14,26,0.72),rgba(8,14,26,0.92)), url('/static/images/slider-1.jpg') center/cover no-repeat;"></div>
-      <div class="hero-slide absolute inset-0" style="background:linear-gradient(rgba(8,14,26,0.72),rgba(8,14,26,0.92)), url('/static/images/slider-2.jpg') center/cover no-repeat;"></div>
-      <div class="hero-slide absolute inset-0" style="background:linear-gradient(rgba(8,14,26,0.72),rgba(8,14,26,0.92)), url('/static/images/slider-3.jpg') center/cover no-repeat;"></div>
-      <div class="hero-slide absolute inset-0" style="background:linear-gradient(rgba(8,14,26,0.72),rgba(8,14,26,0.92)), url('/static/images/slider-4.jpg') center/cover no-repeat;"></div>
-    </div>
-
-    <div class="absolute inset-0 z-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(rgba(212, 175, 55, 0.4) 1px, transparent 1px); background-size: 32px 32px;"></div>
-
-    <div class="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-12 py-24 w-full">
-      <div class="max-w-3xl">
-
-        <div class="inline-flex items-center space-x-2 border border-gold-500/40 px-3.5 py-1.5 rounded-full bg-navy-900/60 backdrop-blur-sm mb-6">
-          <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
-          <span class="font-nav text-[11px] font-semibold text-gold-400 uppercase tracking-widest">Advocates &amp; Patent Attorneys</span>
-        </div>
-
-        <div class="hero-content">
-          <div class="hero-slide-text" data-slide-index="0">
-            <h1 class="font-headline text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 tracking-tight leading-tight">
-              Intellectual Property Law Firm in India
-            </h1>
-            <p class="font-body text-lg text-slate-300 max-w-2xl mb-10 leading-relaxed font-light">
-              IP lawyers advising on trademarks, patents, copyright, designs and geographical indications, for clients across India and abroad.
-            </p>
-          </div>
-
-          <div class="hero-slide-text hidden" data-slide-index="1">
-            <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 tracking-tight leading-tight">
-              Protect Your Brand With Trademark Registration
-            </h2>
-            <p class="font-body text-lg text-slate-300 max-w-2xl mb-10 leading-relaxed font-light">
-              Searches, filing, objections, oppositions and renewals, handled by IPR lawyers who follow your mark from application to registration.
-            </p>
-          </div>
-
-          <div class="hero-slide-text hidden" data-slide-index="2">
-            <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 tracking-tight leading-tight">
-              Patent Filing for Inventors and Innovators
-            </h2>
-            <p class="font-body text-lg text-slate-300 max-w-2xl mb-10 leading-relaxed font-light">
-              Patentability searches, specification drafting, filing in India and under the PCT, and responses to examination reports.
-            </p>
-          </div>
-
-          <div class="hero-slide-text hidden" data-slide-index="3">
-            <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 tracking-tight leading-tight">
-              Enforcing Your Intellectual Property Rights
-            </h2>
-            <p class="font-body text-lg text-slate-300 max-w-2xl mb-10 leading-relaxed font-light">
-              Legal notices, oppositions, cancellations, and infringement and passing-off actions to defend your trademarks, copyright and designs.
-            </p>
-          </div>
-        </div>
-
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 mb-14">
-          <a class="inline-flex items-center justify-center space-x-2 bg-gold-500 hover:bg-gold-400 text-navy-950 px-7 py-4 rounded-lg font-nav text-xs font-bold uppercase tracking-wider transition-all shadow-lg active:scale-95" href="#enquiry">
-            <span>Consult an IP Lawyer</span>
-            <span class="material-symbols-outlined text-base">chevron_right</span>
-          </a>
-          <a class="inline-flex items-center justify-center space-x-2 bg-transparent text-white border border-slate-600 hover:border-gold-400 hover:text-gold-400 px-7 py-4 rounded-lg font-nav text-xs font-semibold uppercase tracking-wider transition-all" href="#practice-areas">
-            <span>Explore Practice Areas</span>
-          </a>
-        </div>
-
-        <div class="pt-8 border-t border-slate-800 flex flex-wrap items-center gap-6 font-nav text-[11px] font-semibold uppercase tracking-widest text-slate-400">
-          <div class="flex items-center space-x-2">
-            <span class="material-symbols-outlined text-gold-400" style="font-size:16px">verified</span>
-            <span>18 Years in IP Practice</span>
-          </div>
-          <span class="text-slate-600">&bull;</span>
-          <div class="flex items-center space-x-2">
-            <span class="material-symbols-outlined text-gold-400" style="font-size:16px">gavel</span>
-            <span>Bar Council Regulated</span>
-          </div>
-          <span class="text-slate-600">&bull;</span>
-          <div class="flex items-center space-x-2">
-            <span class="material-symbols-outlined text-gold-400" style="font-size:16px">account_balance</span>
-            <span>India &amp; International Coverage</span>
-          </div>
-        </div>
+    <section
+      class="relative min-h-[85vh] flex items-center justify-center bg-navy-950 text-white overflow-hidden"
+      id="hero"
+    >
+      <div class="hero-slider w-full h-full absolute inset-0">
+        <div
+          class="hero-slide active absolute inset-0"
+          style="
+            background:
+              linear-gradient(rgba(8, 14, 26, 0.72), rgba(8, 14, 26, 0.92)),
+              url(&quot;/static/images/slider-1.jpg&quot;) center/cover
+                no-repeat;
+          "
+        ></div>
+        <div
+          class="hero-slide absolute inset-0"
+          style="
+            background:
+              linear-gradient(rgba(8, 14, 26, 0.72), rgba(8, 14, 26, 0.92)),
+              url(&quot;/static/images/slider-2.jpg&quot;) center/cover
+                no-repeat;
+          "
+        ></div>
+        <div
+          class="hero-slide absolute inset-0"
+          style="
+            background:
+              linear-gradient(rgba(8, 14, 26, 0.72), rgba(8, 14, 26, 0.92)),
+              url(&quot;/static/images/slider-3.jpg&quot;) center/cover
+                no-repeat;
+          "
+        ></div>
+        <div
+          class="hero-slide absolute inset-0"
+          style="
+            background:
+              linear-gradient(rgba(8, 14, 26, 0.72), rgba(8, 14, 26, 0.92)),
+              url(&quot;/static/images/slider-4.jpg&quot;) center/cover
+                no-repeat;
+          "
+        ></div>
       </div>
-    </div>
 
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-2.5">
-      <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
-      <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
-      <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
-      <button class="hero-dot" data-slide="3" aria-label="Slide 4"></button>
-    </div>
-  </section>
+      <div
+        class="absolute inset-0 z-0 opacity-10 pointer-events-none"
+        style="
+          background-image: radial-gradient(
+            rgba(212, 175, 55, 0.4) 1px,
+            transparent 1px
+          );
+          background-size: 32px 32px;
+        "
+      ></div>
 
-  <section class="py-24 bg-white text-slate-900 relative" id="about">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
-        <div class="lg:col-span-5">
-          <span class="text-gold-500 font-nav text-[11px] font-bold uppercase tracking-widest block mb-3">About the Firm</span>
-          <h2 class="font-headline text-3xl md:text-4xl font-semibold text-navy-950 leading-tight">
-            An IPR Firm Built Around Protecting What You Create
-          </h2>
-          <div class="w-16 h-1 bg-gold-500 mt-6 rounded"></div>
-        </div>
-        <div class="lg:col-span-7 space-y-6 text-slate-600 font-body text-base leading-relaxed">
-          <p>
-            Auromaa Associates is a full-service intellectual property law firm based in India. For 18 years, our team has helped businesses, start-ups, creators, researchers and institutions secure and enforce their intellectual property in India and overseas.
-          </p>
-          <p>
-            We work as one team of senior partners and younger IP lawyers, so every matter gets both experience and close attention. Our practice rests on four values: competence, confidentiality, commitment and courtesy.
-          </p>
-          <div class="pt-2">
-            <a class="inline-flex items-center space-x-2 bg-navy-900 text-white hover:bg-navy-950 px-6 py-3 rounded-lg font-nav text-xs font-bold uppercase tracking-wider transition-all group" href="/the-firm">
-              <span>Meet the Firm</span>
-              <span class="material-symbols-outlined text-gold-400 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+      <div
+        class="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-12 py-24 w-full"
+      >
+        <div class="max-w-3xl">
+          <div
+            class="inline-flex items-center space-x-2 border border-gold-500/40 px-3.5 py-1.5 rounded-full bg-navy-900/60 backdrop-blur-sm mb-6"
+          >
+            <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+            <span
+              class="font-nav text-[11px] font-semibold text-gold-400 uppercase tracking-widest"
+              >Advocates &amp; Patent Attorneys</span
+            >
+          </div>
+
+          <div class="hero-content">
+            <div class="hero-slide-text" data-slide-index="0">
+              <h1
+                class="font-headline text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 tracking-tight leading-tight"
+              >
+                Intellectual Property Law Firm in India
+              </h1>
+              <p
+                class="font-body text-lg text-slate-300 max-w-2xl mb-10 leading-relaxed font-light"
+              >
+                IP lawyers advising on trademarks, patents, copyright, designs
+                and geographical indications, for clients across India and
+                abroad.
+              </p>
+            </div>
+
+            <div class="hero-slide-text hidden" data-slide-index="1">
+              <h2
+                class="font-headline text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 tracking-tight leading-tight"
+              >
+                Protect Your Brand With Trademark Registration
+              </h2>
+              <p
+                class="font-body text-lg text-slate-300 max-w-2xl mb-10 leading-relaxed font-light"
+              >
+                Searches, filing, objections, oppositions and renewals, handled
+                by IPR lawyers who follow your mark from application to
+                registration.
+              </p>
+            </div>
+
+            <div class="hero-slide-text hidden" data-slide-index="2">
+              <h2
+                class="font-headline text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 tracking-tight leading-tight"
+              >
+                Patent Filing for Inventors and Innovators
+              </h2>
+              <p
+                class="font-body text-lg text-slate-300 max-w-2xl mb-10 leading-relaxed font-light"
+              >
+                Patentability searches, specification drafting, filing in India
+                and under the PCT, and responses to examination reports.
+              </p>
+            </div>
+
+            <div class="hero-slide-text hidden" data-slide-index="3">
+              <h2
+                class="font-headline text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 tracking-tight leading-tight"
+              >
+                Enforcing Your Intellectual Property Rights
+              </h2>
+              <p
+                class="font-body text-lg text-slate-300 max-w-2xl mb-10 leading-relaxed font-light"
+              >
+                Legal notices, oppositions, cancellations, and infringement and
+                passing-off actions to defend your trademarks, copyright and
+                designs.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 mb-14"
+          >
+            <a
+              class="inline-flex items-center justify-center space-x-2 bg-gold-500 hover:bg-gold-400 text-navy-950 px-7 py-4 rounded-lg font-nav text-xs font-bold uppercase tracking-wider transition-all shadow-lg active:scale-95"
+              href="#enquiry"
+            >
+              <span>Consult an IP Lawyer</span>
+              <span class="material-symbols-outlined text-base"
+                >chevron_right</span
+              >
+            </a>
+            <a
+              class="inline-flex items-center justify-center space-x-2 bg-transparent text-white border border-slate-600 hover:border-gold-400 hover:text-gold-400 px-7 py-4 rounded-lg font-nav text-xs font-semibold uppercase tracking-wider transition-all"
+              href="#practice-areas"
+            >
+              <span>Explore Practice Areas</span>
             </a>
           </div>
         </div>
-      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
-        <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 relative overflow-hidden group hover:border-gold-500 transition-all hover:shadow-lg">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gold-500"></div>
-          <span class="font-headline text-3xl font-bold text-gold-500 block mb-3">01</span>
-          <h3 class="font-headline text-lg font-semibold text-navy-950">18 Years in IP Practice</h3>
-        </div>
-        <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 relative overflow-hidden group hover:border-gold-500 transition-all hover:shadow-lg">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gold-500"></div>
-          <span class="font-headline text-3xl font-bold text-gold-500 block mb-3">02</span>
-          <h3 class="font-headline text-lg font-semibold text-navy-950">7 Areas of IP Law</h3>
-        </div>
-        <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 relative overflow-hidden group hover:border-gold-500 transition-all hover:shadow-lg">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gold-500"></div>
-          <span class="font-headline text-3xl font-bold text-gold-500 block mb-3">03</span>
-          <h3 class="font-headline text-lg font-semibold text-navy-950">India and International Filings</h3>
-        </div>
-        <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 relative overflow-hidden group hover:border-gold-500 transition-all hover:shadow-lg">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gold-500"></div>
-          <span class="font-headline text-3xl font-bold text-gold-500 block mb-3">04</span>
-          <h3 class="font-headline text-lg font-semibold text-navy-950">Consultancy, Registration and Litigation</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-24 bg-slate-50 border-t border-b border-slate-200" id="practice-areas">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
-        <div>
-          <span class="text-gold-500 font-nav text-[11px] font-bold uppercase tracking-widest block mb-2">Statutory Expertise</span>
-          <h2 class="font-headline text-3xl md:text-4xl font-semibold text-navy-950">IPR Services in India</h2>
-        </div>
-        <p class="text-slate-600 font-body text-sm md:text-base max-w-md mt-4 md:mt-0">
-          Our intellectual property lawyers handle each stage of protection, from first search to enforcement.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {% for card in [
-          {"icon": "verified_user",  "title": "Trademark Registration & Protection", "desc": "Searches, filing, objections, oppositions, renewals and infringement action for brands.", "link": "/practice-areas/trademark", "link_text": "Trademark services →"},
-          {"icon": "lightbulb",      "title": "Patent Filing & Prosecution",         "desc": "Patentability searches, drafting, filing in India and under the PCT, and responses to examination.", "link": "/practice-areas/patent", "link_text": "Patent services →"},
-          {"icon": "copyright",      "title": "Copyright Registration",              "desc": "Registration, licensing and enforcement for literary, artistic, musical, film and software works.", "link": "/practice-areas/copyright", "link_text": "Copyright services →"},
-          {"icon": "architecture",   "title": "Industrial Design Registration",      "desc": "Protection for the shape, pattern and look of products under the Designs Act, 2000.", "link": "/practice-areas/industrial-design", "link_text": "Design services →"},
-          {"icon": "public",         "title": "Geographical Indications",            "desc": "GI registration and authorised-user filings for regional products and producer groups.", "link": "/practice-areas/geographical-indications", "link_text": "GI services →"},
-          {"icon": "eco",            "title": "Plant Varieties & Farmers' Rights",   "desc": "Registration under the PPV&FR Act, 2001 for breeders, institutions and farmer groups.", "link": "/practice-areas/plant-varieties", "link_text": "Plant variety services →"},
-          {"icon": "memory",         "title": "Semiconductor IC Layout Designs",     "desc": "Registration of integrated circuit layout designs under the 2000 Act.", "link": "/practice-areas/semiconductor-ic-layout", "link_text": "IC layout services →"}
-        ] %}
-        <div class="bg-white border border-slate-200 rounded-xl p-7 flex flex-col justify-between hover:shadow-xl hover:border-gold-500/60 transition-all group relative overflow-hidden">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-gold-500 transition-colors"></div>
-          <div>
-            <div class="w-12 h-12 rounded-lg bg-navy-900 flex items-center justify-center mb-6 text-gold-400 shadow-sm">
-              <span class="material-symbols-outlined text-2xl">{{ card.icon }}</span>
-            </div>
-            <h3 class="font-headline text-lg font-semibold text-navy-950 mb-3 group-hover:text-gold-600 transition-colors">{{ card.title }}</h3>
-            <p class="font-body text-sm text-slate-600 leading-relaxed mb-6">{{ card.desc }}</p>
+        <div
+          class="pt-8 border-t border-slate-800 flex flex-wrap items-center gap-x-6 gap-y-3 font-nav text-[11px] font-semibold uppercase tracking-widest text-slate-400"
+        >
+          <div class="flex items-center space-x-2 shrink-0">
+            <span
+              class="material-symbols-outlined text-gold-400"
+              style="font-size: 16px"
+              >verified</span
+            >
+            <span>18 Years in IP Practice</span>
           </div>
-          <a class="inline-flex items-center space-x-1.5 text-navy-900 group-hover:text-gold-500 font-nav text-xs font-bold uppercase tracking-wider transition-colors" href="{{ card.link }}">
-            <span>{{ card.link_text }}</span>
-          </a>
+          <span class="text-slate-600 hidden sm:inline">&bull;</span>
+          <div class="flex items-center space-x-2 shrink-0">
+            <span
+              class="material-symbols-outlined text-gold-400"
+              style="font-size: 16px"
+              >gavel</span
+            >
+            <span>Bar Council Regulated</span>
+          </div>
+          <span class="text-slate-600 hidden sm:inline">&bull;</span>
+          <div class="flex items-center space-x-2 shrink-0">
+            <span
+              class="material-symbols-outlined text-gold-400"
+              style="font-size: 16px"
+              >account_balance</span
+            >
+            <span>India &amp; International Coverage</span>
+          </div>
+          <span class="text-slate-600 hidden sm:inline">&bull;</span>
+          <div class="flex items-center space-x-2 shrink-0">
+            <span
+              class="material-symbols-outlined text-gold-400"
+              style="font-size: 16px"
+              >balance</span
+            >
+            <span>Consultancy, registration and litigation</span>
+          </div>
         </div>
-        {% endfor %}
       </div>
 
-      <div class="mt-12 text-center">
-        <a class="inline-flex items-center space-x-2 bg-navy-900 hover:bg-navy-950 text-white px-8 py-4 rounded-lg font-nav text-xs font-bold uppercase tracking-wider transition-all shadow-md" href="#enquiry">
-          <span>Discuss Your IP Matter</span>
-          <span class="material-symbols-outlined text-sm text-gold-400">chevron_right</span>
-        </a>
+      <div
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-2.5"
+      >
+        <button
+          class="hero-dot active"
+          data-slide="0"
+          aria-label="Slide 1"
+        ></button>
+        <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+        <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+        <button class="hero-dot" data-slide="3" aria-label="Slide 4"></button>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="py-24 bg-navy-900 text-white relative overflow-hidden" id="how-we-work">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-12 relative z-10">
-      <div class="max-w-3xl mb-16">
-        <div class="inline-flex items-center space-x-2 border border-gold-500/40 px-3 py-1 rounded-full mb-4 bg-navy-950/60">
-          <span class="w-2 h-2 rounded-full bg-gold-400"></span>
-          <span class="font-nav text-[11px] font-semibold text-gold-400 uppercase tracking-widest">Our Workflow</span>
-        </div>
-        <h2 class="font-headline text-3xl md:text-4xl font-semibold text-white mb-4">Working With Your IPR Consultant</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white text-slate-900 rounded-xl p-8 shadow-xl flex flex-col justify-between border-t-4 border-gold-500">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="font-headline text-5xl font-bold text-navy-900 opacity-20">01</span>
-              <span class="px-3 py-1 bg-slate-100 rounded-full text-navy-950 font-nav text-[10px] font-bold uppercase tracking-wider">Step 1</span>
-            </div>
-            <h3 class="font-headline text-xl font-semibold text-navy-950 mb-3">Understand your matter.</h3>
-            <p class="font-body text-sm text-slate-600 leading-relaxed">
-              Share your brand, invention or creative work with us. We review what you have and what needs protecting.
+    <section class="py-24 bg-white text-slate-900 relative" id="about">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
+          <div class="lg:col-span-5">
+            <span
+              class="text-gold-500 font-nav text-[11px] font-bold uppercase tracking-widest block mb-3"
+              >About the Firm</span
+            >
+            <h2
+              class="font-headline text-3xl md:text-4xl font-semibold text-navy-950 leading-tight"
+            >
+              An IPR Firm Built Around Protecting What You Create
+            </h2>
+            <div class="w-16 h-1 bg-gold-500 mt-6 rounded"></div>
+          </div>
+          <div
+            class="lg:col-span-7 space-y-6 text-slate-600 font-body text-base leading-relaxed"
+          >
+            <p>
+              Auromaa Associates is a full-service intellectual property law
+              firm based in India. For 18 years, our team has helped businesses,
+              start-ups, creators, researchers and institutions secure and
+              enforce their intellectual property in India and overseas.
             </p>
-          </div>
-        </div>
-
-        <div class="bg-white text-slate-900 rounded-xl p-8 shadow-xl flex flex-col justify-between border-t-4 border-slate-700">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="font-headline text-5xl font-bold text-navy-900 opacity-20">02</span>
-              <span class="px-3 py-1 bg-slate-100 rounded-full text-navy-950 font-nav text-[10px] font-bold uppercase tracking-wider">Step 2</span>
-            </div>
-            <h3 class="font-headline text-xl font-semibold text-navy-950 mb-3">Plan the protection.</h3>
-            <p class="font-body text-sm text-slate-600 leading-relaxed">
-              Your IP lawyer explains the options, timelines and official fees in writing, so you can decide with a clear picture.
+            <p>
+              We work as one team of senior partners and younger IP lawyers, so
+              every matter gets both experience and close attention. Our
+              practice rests on four values: competence, confidentiality,
+              commitment and courtesy.
             </p>
-          </div>
-        </div>
-
-        <div class="bg-white text-slate-900 rounded-xl p-8 shadow-xl flex flex-col justify-between border-t-4 border-gold-500">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="font-headline text-5xl font-bold text-navy-900 opacity-20">03</span>
-              <span class="px-3 py-1 bg-slate-100 rounded-full text-navy-950 font-nav text-[10px] font-bold uppercase tracking-wider">Step 3</span>
-            </div>
-            <h3 class="font-headline text-xl font-semibold text-navy-950 mb-3">File, follow through and enforce.</h3>
-            <p class="font-body text-sm text-slate-600 leading-relaxed">
-              We handle the filing, track deadlines and respond to the IP Office, then act against infringement if it arises.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-12 text-center">
-        <a class="inline-flex items-center space-x-2 bg-gold-500 hover:bg-gold-400 text-navy-950 px-8 py-4 rounded-lg font-nav text-xs font-bold uppercase tracking-wider transition-all shadow-lg" href="#enquiry">
-          <span>Start With an Enquiry</span>
-          <span class="material-symbols-outlined text-sm">chevron_right</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-24 bg-white text-slate-900" id="team">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-gold-500 font-nav text-[11px] font-bold uppercase tracking-widest block mb-3">Our Team</span>
-        <h2 class="font-headline text-3xl md:text-4xl font-semibold text-navy-950 mb-3">Meet Our Intellectual Property Lawyers</h2>
-        <p class="font-body text-sm md:text-base text-slate-600">
-          Each IPR lawyer on our team is enrolled with the Bar Council and focused on intellectual property work.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div class="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden shadow-md flex flex-col md:flex-row hover:shadow-xl transition-all">
-          <div class="md:w-5/12 bg-navy-950 relative min-h-[260px] flex items-center justify-center p-8">
-            <div class="w-24 h-24 rounded-full bg-navy-900 border-2 border-gold-500/40 flex items-center justify-center text-gold-400 text-3xl font-headline font-bold">
-              SD
-            </div>
-            <div class="absolute bottom-3 left-3 bg-navy-900/90 border border-gold-500/30 px-2.5 py-1 rounded font-nav text-[10px] text-gold-400 tracking-wider font-semibold">
-              PARTNER
-            </div>
-          </div>
-          <div class="md:w-7/12 p-8 flex flex-col justify-between">
-            <div>
-              <span class="text-gold-500 font-nav text-[11px] font-bold uppercase tracking-wider">Partner</span>
-              <h3 class="font-headline text-2xl font-bold text-navy-950 mt-1 mb-2">Sidhartha Das</h3>
-              <p class="font-body text-sm text-slate-600 leading-relaxed mb-6">
-                Practises in patents, IP litigation, geographical indications and copyright.
-              </p>
-            </div>
-            <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
-              <a class="inline-flex items-center space-x-1.5 text-navy-900 hover:text-gold-500 font-bold font-nav text-xs uppercase tracking-wider transition-colors" href="mailto:info@auromaaassociates.com?subject=Enquiry for Sidhartha Das">
-                <span class="material-symbols-outlined text-base">mail</span>
-                <span>Contact Counsel</span>
+            <div class="pt-2">
+              <a
+                class="inline-flex items-center space-x-2 bg-navy-900 text-white hover:bg-navy-950 px-6 py-3 rounded-lg font-nav text-xs font-bold uppercase tracking-wider transition-all group"
+                href="/the-firm"
+              >
+                <span>Meet the Firm</span>
+                <span
+                  class="material-symbols-outlined text-gold-400 group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
               </a>
-              <span class="text-xs text-slate-400 font-nav">Bar Council Enrolled</span>
             </div>
           </div>
         </div>
 
-        <div class="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden shadow-md flex flex-col md:flex-row hover:shadow-xl transition-all">
-          <div class="md:w-5/12 bg-navy-950 relative min-h-[260px] flex items-center justify-center p-8">
-            <div class="w-24 h-24 rounded-full bg-navy-900 border-2 border-gold-500/40 flex items-center justify-center text-gold-400 text-3xl font-headline font-bold">
-              MD
-            </div>
-            <div class="absolute bottom-3 left-3 bg-navy-900/90 border border-gold-500/30 px-2.5 py-1 rounded font-nav text-[10px] text-gold-400 tracking-wider font-semibold">
-              SENIOR ASSOCIATE
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
+          <div
+            class="bg-slate-50 border border-slate-200 rounded-xl p-8 relative overflow-hidden group hover:border-gold-500 transition-all hover:shadow-lg"
+          >
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gold-500"></div>
+            <span
+              class="font-headline text-3xl font-bold text-gold-500 block mb-3"
+              >01</span
+            >
+            <h3 class="font-headline text-lg font-semibold text-navy-950">
+              18 Years in IP Practice
+            </h3>
           </div>
-          <div class="md:w-7/12 p-8 flex flex-col justify-between">
-            <div>
-              <span class="text-gold-500 font-nav text-[11px] font-bold uppercase tracking-wider">Senior Associate</span>
-              <h3 class="font-headline text-2xl font-bold text-navy-950 mt-1 mb-2">Moitri Das</h3>
-            </div>
-            <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
-              <a class="inline-flex items-center space-x-1.5 text-navy-900 hover:text-gold-500 font-bold font-nav text-xs uppercase tracking-wider transition-colors" href="mailto:info@auromaaassociates.com?subject=Enquiry for Moitri Das">
-                <span class="material-symbols-outlined text-base">mail</span>
-                <span>Contact Counsel</span>
-              </a>
-              <span class="text-xs text-slate-400 font-nav">Bar Council Enrolled</span>
-            </div>
+          <div
+            class="bg-slate-50 border border-slate-200 rounded-xl p-8 relative overflow-hidden group hover:border-gold-500 transition-all hover:shadow-lg"
+          >
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gold-500"></div>
+            <span
+              class="font-headline text-3xl font-bold text-gold-500 block mb-3"
+              >02</span
+            >
+            <h3 class="font-headline text-lg font-semibold text-navy-950">
+              7 Areas of IP Law
+            </h3>
+          </div>
+          <div
+            class="bg-slate-50 border border-slate-200 rounded-xl p-8 relative overflow-hidden group hover:border-gold-500 transition-all hover:shadow-lg"
+          >
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gold-500"></div>
+            <span
+              class="font-headline text-3xl font-bold text-gold-500 block mb-3"
+              >03</span
+            >
+            <h3 class="font-headline text-lg font-semibold text-navy-950">
+              India and International Filings
+            </h3>
+          </div>
+          <div
+            class="bg-slate-50 border border-slate-200 rounded-xl p-8 relative overflow-hidden group hover:border-gold-500 transition-all hover:shadow-lg"
+          >
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gold-500"></div>
+            <span
+              class="font-headline text-3xl font-bold text-gold-500 block mb-3"
+              >04</span
+            >
+            <h3 class="font-headline text-lg font-semibold text-navy-950">
+              Consultancy, Registration and Litigation
+            </h3>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="mt-12 text-center">
-        <a class="inline-flex items-center space-x-2 bg-navy-900 hover:bg-navy-950 text-white px-8 py-4 rounded-lg font-nav text-xs font-bold uppercase tracking-wider transition-all shadow-md" href="/our-team">
-          <span>View Full Team</span>
-          <span class="material-symbols-outlined text-sm text-gold-400">arrow_forward</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-24 bg-slate-50 border-t border-slate-200" id="enquiry">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-
-        <div class="lg:col-span-7 bg-navy-900 rounded-2xl p-8 lg:p-12 text-white shadow-2xl border-t-4 border-gold-500">
-          <div class="mb-8">
-            <h2 class="font-headline text-2xl md:text-3xl font-semibold text-white mb-2">Speak to an IP Lawyer</h2>
-            <p class="font-body text-sm text-slate-300 leading-relaxed">
-              Tell us briefly about your trademark, patent, copyright or design matter. A member of our team will respond within one working day.
-            </p>
+    <section
+      class="py-24 bg-slate-50 border-t border-b border-slate-200"
+      id="practice-areas"
+    >
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-12"
+        >
+          <div>
+            <span
+              class="text-gold-500 font-nav text-[11px] font-bold uppercase tracking-widest block mb-2"
+              >Statutory Expertise</span
+            >
+            <h2
+              class="font-headline text-3xl md:text-4xl font-semibold text-navy-950"
+            >
+              IPR Services in India
+            </h2>
           </div>
-
-          <form id="enquiry-form" class="space-y-5" action="/api/enquiry" method="POST">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label class="form-label" for="full_name">Full Name *</label>
-                <input class="form-input" id="full_name" name="full_name" placeholder="Your full name" required type="text"/>
-              </div>
-              <div>
-                <label class="form-label" for="email">Email *</label>
-                <input class="form-input" id="email" name="email" placeholder="your@email.com" required type="email"/>
-              </div>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label class="form-label" for="phone">Phone *</label>
-                <input class="form-input" id="phone" name="phone" placeholder="+91 98300 00000" required type="tel"/>
-              </div>
-              <div>
-                <label class="form-label" for="organisation">Organisation</label>
-                <input class="form-input" id="organisation" name="organisation" placeholder="Your company / institution" type="text"/>
-              </div>
-            </div>
-            <div>
-              <label class="form-label" for="area_of_interest">Area of Interest *</label>
-              <select class="form-input" id="area_of_interest" name="area_of_interest" required>
-                <option value="Trademark">Trademark</option>
-                <option value="Patent">Patent</option>
-                <option value="Copyright">Copyright</option>
-                <option value="Design">Design</option>
-                <option value="GI">GI</option>
-                <option value="Plant Variety">Plant Variety</option>
-                <option value="IC Layout">IC Layout</option>
-                <option value="Litigation">Litigation</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div>
-              <label class="form-label" for="description">Brief Description *</label>
-              <textarea class="form-input" id="description" maxlength="500" name="description" placeholder="Describe your IP matter briefly..." required rows="4"></textarea>
-            </div>
-            <div class="flex items-start space-x-3 pt-1">
-              <input class="mt-1 rounded bg-navy-950 border-slate-600 text-gold-500 focus:ring-gold-500" id="consent" name="consent" required type="checkbox" value="true"/>
-              <label class="text-xs text-slate-300 font-body leading-relaxed" for="consent">
-                I have read and agree to the <a class="underline hover:text-gold-400" href="/disclaimer">Disclaimer</a> and <a class="underline hover:text-gold-400" href="/privacy-policy">Privacy Policy</a>, and I consent to Auromaa Associates using these details to respond to my enquiry.
-              </label>
-            </div>
-            <button class="w-full bg-gold-500 hover:bg-gold-400 text-navy-950 py-4 px-8 rounded-lg font-nav text-xs font-bold uppercase tracking-wider shadow-lg transition-all active:scale-[0.98] mt-4" type="submit">
-              Send Enquiry
-            </button>
-            <p id="enquiry-success" class="hidden text-center text-sm text-gold-400 font-nav font-semibold pt-2">
-              ✓ Thank you. We have received your enquiry and will get back to you within one working day.
-            </p>
-            <p id="enquiry-error" class="hidden text-center text-sm text-red-400 font-nav font-semibold pt-2"></p>
-          </form>
-
-          <p class="mt-4 text-xs text-slate-400 font-body leading-relaxed">
-            Please do not share confidential documents or details through this form. Submitting an enquiry does not create an advocate–client relationship.
+          <p
+            class="text-slate-600 font-body text-sm md:text-base max-w-md mt-4 md:mt-0"
+          >
+            Our intellectual property lawyers handle each stage of protection,
+            from first search to enforcement.
           </p>
         </div>
 
-        <div class="lg:col-span-5 space-y-8">
-          <div>
-            <span class="text-gold-500 font-nav text-[11px] font-bold uppercase tracking-widest block mb-2">Auromaa Associates</span>
-            <h3 class="font-headline text-2xl font-semibold text-navy-950 mb-3">Contact Details</h3>
+        <div class="mb-8">
+          <h3
+            class="font-headline text-2xl font-semibold text-navy-950 flex items-center space-x-3"
+          >
+            <span>Protect Your IP</span>
+            <span class="h-0.5 w-12 bg-gold-500 rounded inline-block"></span>
+          </h3>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        >
+          {% for card in [
+            {"icon": "verified_user", "title": "Trademark Registration & Protection", "desc": "Searches, filing, objections, oppositions, renewals and infringement action for brands.", "link": "/practice-areas/trademark", "link_text": "Trademark services →"},
+            {"icon": "lightbulb", "title": "Patent Filing & Prosecution", "desc": "Patentability searches, drafting, filing in India and under the PCT, and responses to examination.", "link": "/practice-areas/patent", "link_text": "Patent services →"},
+            {"icon": "copyright", "title": "Copyright Registration", "desc": "Registration, licensing and enforcement for literary, artistic, musical, film and software works.", "link": "/practice-areas/copyright", "link_text": "Copyright services →"},
+            {"icon": "architecture", "title": "Industrial Design Registration", "desc": "Protection for the shape, pattern and look of products under the Designs Act, 2000.", "link": "/practice-areas/industrial-design", "link_text": "Design services →"},
+            {"icon": "public", "title": "Geographical Indications", "desc": "GI registration and authorised-user filings for regional products and producer groups.", "link": "/practice-areas/geographical-indications", "link_text": "GI services →"},
+            {"icon": "eco", "title": "Plant Varieties & Farmers' Rights", "desc": "Registration under the PPV&FR Act, 2001 for breeders, institutions and farmer groups.", "link": "/practice-areas/plant-varieties", "link_text": "Plant variety services →"},
+            {"icon": "memory", "title": "Semiconductor IC Layout Designs", "desc": "Registration of integrated circuit layout designs under the 2000 Act.", "link": "/practice-areas/semiconductor-ic-layout", "link_text": "IC layout services →"},
+            {"icon": "rocket_launch", "title": "Startup & MSME IP Filings", "desc": "Trademark, patent and design filings for start-ups and MSMEs, including the reduced official fees open to eligible applicants.", "link": "/practice-areas/startup-msme", "link_text": "Startup IP services →"}
+          ] %}
+          <div
+            class="bg-white border border-slate-200 rounded-xl p-7 flex flex-col justify-between hover:shadow-xl hover:border-gold-500/60 transition-all group relative overflow-hidden"
+          >
+            <div
+              class="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-gold-500 transition-colors"
+            ></div>
+            <div>
+              <div
+                class="w-12 h-12 rounded-lg bg-navy-900 flex items-center justify-center mb-6 text-gold-400 shadow-sm"
+              >
+                <span class="material-symbols-outlined text-2xl"
+                  >{{ card.icon }}</span
+                >
+              </div>
+              <h4
+                class="font-headline text-lg font-semibold text-navy-950 mb-3 group-hover:text-gold-600 transition-colors"
+              >
+                {{ card.title }}
+              </h4>
+              <p class="font-body text-sm text-slate-600 leading-relaxed mb-6">
+                {{ card.desc }}
+              </p>
+            </div>
+            <a
+              class="inline-flex items-center space-x-1.5 text-navy-900 group-hover:text-gold-500 font-nav text-xs font-bold uppercase tracking-wider transition-colors"
+              href="{{ card.link }}"
+            >
+              <span>{{ card.link_text }}</span>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="mt-16 mb-8">
+          <h3
+            class="font-headline text-2xl font-semibold text-navy-950 flex items-center space-x-3"
+          >
+            <span>Advise, transact and enforce</span>
+            <span class="h-0.5 w-12 bg-gold-500 rounded inline-block"></span>
+          </h3>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6"
+        >
+          {% for card in [
+            {"icon": "medication", "title": "Pharmaceutical IP & Regulatory", "desc": "Patent filing and oppositions, Section 3(d) questions and regulatory advice for pharmaceutical and life-sciences companies.", "link": "/practice-areas/pharmaceutical-ip", "link_text": "Pharma IP services →"},
+            {"icon": "account_balance", "title": "IP in Insolvency & Transactions", "desc": "IP due diligence, assignments and recordals, and protection of IP assets in mergers, acquisitions and insolvency proceedings under the IBC.", "link": "/practice-areas/insolvency-transactions", "link_text": "IP transaction services →"},
+            {"icon": "handshake", "title": "Licensing, Franchising & Technology Transfer", "desc": "Drafting and negotiating licence, franchise, technology transfer and confidentiality (NDA) agreements, so you can commercialise your IP safely.", "link": "/practice-areas/licensing-franchising", "link_text": "Licensing services →"},
+            {"icon": "fact_check", "title": "IP Portfolio Audits", "desc": "A review by our IPR consultants of your registered and unregistered IP, flagging gaps, renewal deadlines and risks.", "link": "/practice-areas/ip-portfolio-audits", "link_text": "IP audit services →"},
+            {"icon": "public", "title": "Foreign Associate Desk", "desc": "A dedicated desk for overseas law firms and IP attorneys filing and prosecuting trademarks, patents and designs in India.", "link": "/practice-areas/foreign-associate-desk", "link_text": "For foreign associates →"}
+          ] %}
+          <div
+            class="bg-white border border-slate-200 rounded-xl p-7 flex flex-col justify-between hover:shadow-xl hover:border-gold-500/60 transition-all group relative overflow-hidden"
+          >
+            <div
+              class="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-gold-500 transition-colors"
+            ></div>
+            <div>
+              <div
+                class="w-12 h-12 rounded-lg bg-navy-900 flex items-center justify-center mb-6 text-gold-400 shadow-sm"
+              >
+                <span class="material-symbols-outlined text-2xl"
+                  >{{ card.icon }}</span
+                >
+              </div>
+              <h4
+                class="font-headline text-lg font-semibold text-navy-950 mb-3 group-hover:text-gold-600 transition-colors"
+              >
+                {{ card.title }}
+              </h4>
+              <p class="font-body text-sm text-slate-600 leading-relaxed mb-6">
+                {{ card.desc }}
+              </p>
+            </div>
+            <a
+              class="inline-flex items-center space-x-1.5 text-navy-900 group-hover:text-gold-500 font-nav text-xs font-bold uppercase tracking-wider transition-colors"
+              href="{{ card.link }}"
+            >
+              <span>{{ card.link_text }}</span>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="mt-14 text-center">
+          <a
+            class="inline-flex items-center space-x-2 bg-navy-900 hover:bg-navy-950 text-white px-8 py-4 rounded-lg font-nav text-xs font-bold uppercase tracking-wider transition-all shadow-md"
+            href="#enquiry"
+          >
+            <span>Discuss Your IP Matter</span>
+            <span class="material-symbols-outlined text-sm text-gold-400"
+              >chevron_right</span
+            >
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="py-24 bg-navy-900 text-white relative overflow-hidden"
+      id="how-we-work"
+    >
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-12 relative z-10">
+        <div class="max-w-3xl mb-16">
+          <div
+            class="inline-flex items-center space-x-2 border border-gold-500/40 px-3 py-1 rounded-full mb-4 bg-navy-950/60"
+          >
+            <span class="w-2 h-2 rounded-full bg-gold-400"></span>
+            <span
+              class="font-nav text-[11px] font-semibold text-gold-400 uppercase tracking-widest"
+              >Our Workflow</span
+            >
+          </div>
+          <h2
+            class="font-headline text-3xl md:text-4xl font-semibold text-white mb-4"
+          >
+            Working With Your IPR Consultant
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white text-slate-900 rounded-xl p-8 shadow-xl flex flex-col justify-between border-t-4 border-gold-500"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <span
+                  class="font-headline text-5xl font-bold text-navy-900 opacity-20"
+                  >01</span
+                >
+                <span
+                  class="px-3 py-1 bg-slate-100 rounded-full text-navy-950 font-nav text-[10px] font-bold uppercase tracking-wider"
+                  >Step 1</span
+                >
+              </div>
+              <h3
+                class="font-headline text-xl font-semibold text-navy-950 mb-3"
+              >
+                Understand your matter.
+              </h3>
+              <p class="font-body text-sm text-slate-600 leading-relaxed">
+                Share your brand, invention or creative work with us. We review
+                what you have and what needs protecting.
+              </p>
+            </div>
           </div>
 
-          <div class="bg-white p-6 rounded-xl border border-slate-200 space-y-5 shadow-sm">
-            <div class="flex items-start space-x-4">
-              <div class="w-10 h-10 rounded-lg bg-navy-900 flex items-center justify-center text-gold-400 shrink-0 mt-1">
-                <span class="material-symbols-outlined">call</span>
+          <div
+            class="bg-white text-slate-900 rounded-xl p-8 shadow-xl flex flex-col justify-between border-t-4 border-slate-700"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <span
+                  class="font-headline text-5xl font-bold text-navy-900 opacity-20"
+                  >02</span
+                >
+                <span
+                  class="px-3 py-1 bg-slate-100 rounded-full text-navy-950 font-nav text-[10px] font-bold uppercase tracking-wider"
+                  >Step 2</span
+                >
               </div>
-              <div>
-                <h4 class="font-body text-xs font-bold text-slate-400 uppercase tracking-wider">Phone</h4>
-                <a class="font-body text-sm font-semibold text-navy-950 hover:text-gold-500 transition-colors" href="tel:+913340693025">+91 33 40693025</a>
+              <h3
+                class="font-headline text-xl font-semibold text-navy-950 mb-3"
+              >
+                Plan the protection.
+              </h3>
+              <p class="font-body text-sm text-slate-600 leading-relaxed">
+                Your IP lawyer explains the options, timelines and official fees
+                in writing, so you can decide with a clear picture.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white text-slate-900 rounded-xl p-8 shadow-xl flex flex-col justify-between border-t-4 border-gold-500"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <span
+                  class="font-headline text-5xl font-bold text-navy-900 opacity-20"
+                  >03</span
+                >
+                <span
+                  class="px-3 py-1 bg-slate-100 rounded-full text-navy-950 font-nav text-[10px] font-bold uppercase tracking-wider"
+                  >Step 3</span
+                >
+              </div>
+              <h3
+                class="font-headline text-xl font-semibold text-navy-950 mb-3"
+              >
+                File, follow through and enforce.
+              </h3>
+              <p class="font-body text-sm text-slate-600 leading-relaxed">
+                We handle the filing, track deadlines and respond to the IP
+                Office, then act against infringement if it arises.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a
+            class="inline-flex items-center space-x-2 bg-gold-500 hover:bg-gold-400 text-navy-950 px-8 py-4 rounded-lg font-nav text-xs font-bold uppercase tracking-wider transition-all shadow-lg"
+            href="#enquiry"
+          >
+            <span>Start With an Enquiry</span>
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-white text-slate-900" id="team">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span
+            class="text-gold-500 font-nav text-[11px] font-bold uppercase tracking-widest block mb-3"
+            >Our Team</span
+          >
+          <h2
+            class="font-headline text-3xl md:text-4xl font-semibold text-navy-950 mb-3"
+          >
+            Meet Our Intellectual Property Lawyers
+          </h2>
+          <p class="font-body text-sm md:text-base text-slate-600">
+            Each IPR lawyer on our team is enrolled with the Bar Council and
+            focused on intellectual property work.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden shadow-md flex flex-col hover:shadow-xl transition-all"
+          >
+            <div class="bg-navy-950 relative h-72 overflow-hidden">
+              <img
+                src="/static/images/SiddharthaDas.png"
+                alt="Sidhartha Das - Partner"
+                class="w-full h-full object-cover object-top absolute inset-0"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent"
+              ></div>
+              <div
+                class="absolute bottom-3 left-3 bg-navy-900/90 border border-gold-500/30 px-2.5 py-1 rounded font-nav text-[10px] text-gold-400 tracking-wider font-semibold z-10"
+              >
+                PARTNER
               </div>
             </div>
-            <div class="flex items-start space-x-4 border-t border-slate-100 pt-4">
-              <div class="w-10 h-10 rounded-lg bg-navy-900 flex items-center justify-center text-gold-400 shrink-0 mt-1">
-                <span class="material-symbols-outlined">mail</span>
-              </div>
+            <div class="p-6 flex flex-col justify-between flex-1">
               <div>
-                <h4 class="font-body text-xs font-bold text-slate-400 uppercase tracking-wider">Email</h4>
-                <a class="font-body text-sm font-semibold text-navy-950 hover:text-gold-500 transition-colors" href="mailto:info@auromaaassociates.com">info@auromaaassociates.com</a>
+                <span
+                  class="text-gold-500 font-nav text-[11px] font-bold uppercase tracking-wider"
+                  >Partner</span
+                >
+                <h3
+                  class="font-headline text-xl font-bold text-navy-950 mt-1 mb-2"
+                >
+                  Sidhartha Das
+                </h3>
+                <p
+                  class="font-body text-sm text-slate-600 leading-relaxed mb-6"
+                >
+                  Practises in patents, IP litigation, geographical indications
+                  and copyright.
+                </p>
+              </div>
+              <div
+                class="pt-4 border-t border-slate-200 flex items-center justify-between"
+              >
+                <a
+                  class="inline-flex items-center space-x-1.5 text-navy-900 hover:text-gold-500 font-bold font-nav text-xs uppercase tracking-wider transition-colors"
+                  href="mailto:info@auromaaassociates.com?subject=Enquiry for Sidhartha Das"
+                >
+                  <span class="material-symbols-outlined text-base">mail</span>
+                  <span>Contact Counsel</span>
+                </a>
+                <span class="text-xs text-slate-400 font-nav"
+                  >Bar Council Enrolled</span
+                >
               </div>
             </div>
-            <div class="flex items-start space-x-4 border-t border-slate-100 pt-4">
-              <div class="w-10 h-10 rounded-lg bg-navy-900 flex items-center justify-center text-gold-400 shrink-0 mt-1">
-                <span class="material-symbols-outlined">location_on</span>
-              </div>
-              <div>
-                <h4 class="font-body text-xs font-bold text-slate-400 uppercase tracking-wider">Visit</h4>
-                <p class="font-body text-sm text-navy-950">AA-13, Ground Floor, Prafulla Kanan, Kestopur West, Kolkata, West Bengal</p>
-                <a class="text-gold-500 hover:text-gold-600 font-nav text-xs font-bold uppercase tracking-wider mt-1.5 inline-block" href="https://maps.google.com/?q=Prafulla+Kanan+Kestopur+West+Kolkata" target="_blank" rel="noreferrer">Get Directions →</a>
+          </div>
+
+          <div
+            class="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden shadow-md flex flex-col hover:shadow-xl transition-all"
+          >
+            <div class="bg-navy-950 relative h-72 overflow-hidden">
+              <img
+                src="/static/images/RadhaCharanDas.png"
+                alt="Dr. Radha Charan Das - Partner"
+                class="w-full h-full object-cover object-top absolute inset-0"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent"
+              ></div>
+              <div
+                class="absolute bottom-3 left-3 bg-navy-900/90 border border-gold-500/30 px-2.5 py-1 rounded font-nav text-[10px] text-gold-400 tracking-wider font-semibold z-10"
+              >
+                PARTNER
               </div>
             </div>
-            <div class="flex items-start space-x-4 border-t border-slate-100 pt-4">
-              <div class="w-10 h-10 rounded-lg bg-navy-900 flex items-center justify-center text-gold-400 shrink-0 mt-1">
-                <span class="material-symbols-outlined">schedule</span>
+            <div class="p-6 flex flex-col justify-between flex-1">
+              <div>
+                <span
+                  class="text-gold-500 font-nav text-[11px] font-bold uppercase tracking-wider"
+                  >Partner</span
+                >
+                <h3
+                  class="font-headline text-xl font-bold text-navy-950 mt-1 mb-2"
+                >
+                  Dr. Radha Charan Das
+                </h3>
+                <p
+                  class="font-body text-sm text-slate-600 leading-relaxed mb-6"
+                >
+                  Ph.D. (Zoology), LL.B. with 30+ years in IP law and
+                  agricultural research. Ex-Director ICAR.
+                </p>
+              </div>
+              <div
+                class="pt-4 border-t border-slate-200 flex items-center justify-between"
+              >
+                <a
+                  class="inline-flex items-center space-x-1.5 text-navy-900 hover:text-gold-500 font-bold font-nav text-xs uppercase tracking-wider transition-colors"
+                  href="mailto:info@auromaaassociates.com?subject=Enquiry for Dr. Radha Charan Das"
+                >
+                  <span class="material-symbols-outlined text-base">mail</span>
+                  <span>Contact Counsel</span>
+                </a>
+                <span class="text-xs text-slate-400 font-nav"
+                  >Bar Council Enrolled</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden shadow-md flex flex-col hover:shadow-xl transition-all"
+          >
+            <div
+              class="bg-navy-950 relative h-72 flex items-center justify-center p-8"
+            >
+              <div
+                class="w-24 h-24 rounded-full bg-navy-900 border-2 border-gold-500/40 flex items-center justify-center text-gold-400"
+              >
+                <span class="material-symbols-outlined text-4xl">person</span>
+              </div>
+              <div
+                class="absolute bottom-3 left-3 bg-navy-900/90 border border-gold-500/30 px-2.5 py-1 rounded font-nav text-[10px] text-gold-400 tracking-wider font-semibold"
+              >
+                PARTNER
+              </div>
+            </div>
+            <div class="p-6 flex flex-col justify-between flex-1">
+              <div>
+                <span
+                  class="text-gold-500 font-nav text-[11px] font-bold uppercase tracking-wider"
+                  >Partner</span
+                >
+                <h3
+                  class="font-headline text-xl font-bold text-navy-950 mt-1 mb-2"
+                >
+                  Partner
+                </h3>
+                <p
+                  class="font-body text-sm text-slate-600 leading-relaxed mb-6"
+                >
+                  Senior intellectual property advocate and patent attorney.
+                  Profile details to be announced.
+                </p>
+              </div>
+              <div
+                class="pt-4 border-t border-slate-200 flex items-center justify-between"
+              >
+                <a
+                  class="inline-flex items-center space-x-1.5 text-navy-900 hover:text-gold-500 font-bold font-nav text-xs uppercase tracking-wider transition-colors"
+                  href="mailto:info@auromaaassociates.com?subject=Enquiry for Auromaa Associates Partner"
+                >
+                  <span class="material-symbols-outlined text-base">mail</span>
+                  <span>Contact Counsel</span>
+                </a>
+                <span class="text-xs text-slate-400 font-nav"
+                  >Bar Council Enrolled</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a
+            class="inline-flex items-center space-x-2 bg-navy-900 hover:bg-navy-950 text-white px-8 py-4 rounded-lg font-nav text-xs font-bold uppercase tracking-wider transition-all shadow-md"
+            href="/our-team"
+          >
+            <span>View Full Team</span>
+            <span class="material-symbols-outlined text-sm text-gold-400"
+              >arrow_forward</span
+            >
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-slate-50 border-t border-slate-200" id="enquiry">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div
+            class="lg:col-span-7 bg-navy-900 rounded-2xl p-8 lg:p-12 text-white shadow-2xl border-t-4 border-gold-500"
+          >
+            <div class="mb-8">
+              <h2
+                class="font-headline text-2xl md:text-3xl font-semibold text-white mb-2"
+              >
+                Speak to an IP Lawyer
+              </h2>
+              <p class="font-body text-sm text-slate-300 leading-relaxed">
+                Tell us briefly about your trademark, patent, copyright or
+                design matter. A member of our team will respond within one
+                working day.
+              </p>
+            </div>
+
+            <form
+              id="enquiry-form"
+              class="space-y-5"
+              action="/api/enquiry"
+              method="POST"
+            >
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label class="form-label" for="full_name">Full Name *</label>
+                  <input
+                    class="form-input"
+                    id="full_name"
+                    name="full_name"
+                    placeholder="Your full name"
+                    required
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <label class="form-label" for="email">Email *</label>
+                  <input
+                    class="form-input"
+                    id="email"
+                    name="email"
+                    placeholder="your@email.com"
+                    required
+                    type="email"
+                  />
+                </div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label class="form-label" for="phone">Phone *</label>
+                  <input
+                    class="form-input"
+                    id="phone"
+                    name="phone"
+                    placeholder="+91 98300 00000"
+                    required
+                    type="tel"
+                  />
+                </div>
+                <div>
+                  <label class="form-label" for="organisation"
+                    >Organisation</label
+                  >
+                  <input
+                    class="form-input"
+                    id="organisation"
+                    name="organisation"
+                    placeholder="Your company / institution"
+                    type="text"
+                  />
+                </div>
               </div>
               <div>
-                <h4 class="font-body text-xs font-bold text-slate-400 uppercase tracking-wider">Hours</h4>
-                <p class="font-body text-sm text-slate-700 leading-relaxed">Mon–Fri 9:00 am-9:00 pm · Sat 10:00 am-2:00 pm<br/><span class="text-slate-400 text-xs">Closed Sundays and public holidays</span></p>
+                <label class="form-label" for="area_of_interest"
+                  >Area of Interest *</label
+                >
+                <select
+                  class="form-input"
+                  id="area_of_interest"
+                  name="area_of_interest"
+                  required
+                >
+                  <option value="Trademark">Trademark</option>
+                  <option value="Patent">Patent</option>
+                  <option value="Copyright">Copyright</option>
+                  <option value="Design">Design</option>
+                  <option value="GI">GI</option>
+                  <option value="Plant Variety">Plant Variety</option>
+                  <option value="IC Layout">IC Layout</option>
+                  <option value="Litigation">Litigation</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label class="form-label" for="description"
+                  >Brief Description *</label
+                >
+                <textarea
+                  class="form-input"
+                  id="description"
+                  maxlength="500"
+                  name="description"
+                  placeholder="Describe your IP matter briefly..."
+                  required
+                  rows="4"
+                ></textarea>
+              </div>
+              <div class="flex items-start space-x-3 pt-1">
+                <input
+                  class="mt-1 rounded bg-navy-950 border-slate-600 text-gold-500 focus:ring-gold-500"
+                  id="consent"
+                  name="consent"
+                  required
+                  type="checkbox"
+                  value="true"
+                />
+                <label
+                  class="text-xs text-slate-300 font-body leading-relaxed"
+                  for="consent"
+                >
+                  I have read and agree to the
+                  <a class="underline hover:text-gold-400" href="/disclaimer"
+                    >Disclaimer</a
+                  >
+                  and
+                  <a
+                    class="underline hover:text-gold-400"
+                    href="/privacy-policy"
+                    >Privacy Policy</a
+                  >, and I consent to Auromaa Associates using these details to
+                  respond to my enquiry.
+                </label>
+              </div>
+              <button
+                class="w-full bg-gold-500 hover:bg-gold-400 text-navy-950 py-4 px-8 rounded-lg font-nav text-xs font-bold uppercase tracking-wider shadow-lg transition-all active:scale-[0.98] mt-4"
+                type="submit"
+              >
+                Send Enquiry
+              </button>
+              <p
+                id="enquiry-success"
+                class="hidden text-center text-sm text-gold-400 font-nav font-semibold pt-2"
+              >
+                ✓ Thank you. We have received your enquiry and will get back to
+                you within one working day.
+              </p>
+              <p
+                id="enquiry-error"
+                class="hidden text-center text-sm text-red-400 font-nav font-semibold pt-2"
+              ></p>
+            </form>
+
+            <p class="mt-4 text-xs text-slate-400 font-body leading-relaxed">
+              Please do not share confidential documents or details through this
+              form. Submitting an enquiry does not create an advocate–client
+              relationship.
+            </p>
+          </div>
+
+          <div class="lg:col-span-5 space-y-8">
+            <div>
+              <span
+                class="text-gold-500 font-nav text-[11px] font-bold uppercase tracking-widest block mb-2"
+                >Auromaa Associates</span
+              >
+              <h3
+                class="font-headline text-2xl font-semibold text-navy-950 mb-3"
+              >
+                Contact Details
+              </h3>
+            </div>
+
+            <div
+              class="bg-white p-6 rounded-xl border border-slate-200 space-y-5 shadow-sm"
+            >
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 rounded-lg bg-navy-900 flex items-center justify-center text-gold-400 shrink-0 mt-1"
+                >
+                  <span class="material-symbols-outlined">call</span>
+                </div>
+                <div>
+                  <h4
+                    class="font-body text-xs font-bold text-slate-400 uppercase tracking-wider"
+                  >
+                    Phone
+                  </h4>
+                  <a
+                    class="font-body text-sm font-semibold text-navy-950 hover:text-gold-500 transition-colors"
+                    href="tel:+913340693025"
+                    >+91 33 40693025</a
+                  >
+                </div>
+              </div>
+              <div
+                class="flex items-start space-x-4 border-t border-slate-100 pt-4"
+              >
+                <div
+                  class="w-10 h-10 rounded-lg bg-navy-900 flex items-center justify-center text-gold-400 shrink-0 mt-1"
+                >
+                  <span class="material-symbols-outlined">mail</span>
+                </div>
+                <div>
+                  <h4
+                    class="font-body text-xs font-bold text-slate-400 uppercase tracking-wider"
+                  >
+                    Email
+                  </h4>
+                  <a
+                    class="font-body text-sm font-semibold text-navy-950 hover:text-gold-500 transition-colors"
+                    href="mailto:info@auromaaassociates.com"
+                    >info@auromaaassociates.com</a
+                  >
+                </div>
+              </div>
+              <div
+                class="flex items-start space-x-4 border-t border-slate-100 pt-4"
+              >
+                <div
+                  class="w-10 h-10 rounded-lg bg-navy-900 flex items-center justify-center text-gold-400 shrink-0 mt-1"
+                >
+                  <span class="material-symbols-outlined">location_on</span>
+                </div>
+                <div>
+                  <h4
+                    class="font-body text-xs font-bold text-slate-400 uppercase tracking-wider"
+                  >
+                    Visit
+                  </h4>
+                  <p class="font-body text-sm text-navy-950">
+                    AA-13, Ground Floor, Prafulla Kanan, Kestopur West, Kolkata,
+                    West Bengal
+                  </p>
+                  <a
+                    class="text-gold-500 hover:text-gold-600 font-nav text-xs font-bold uppercase tracking-wider mt-1.5 inline-block"
+                    href="https://maps.google.com/?q=Prafulla+Kanan+Kestopur+West+Kolkata"
+                    target="_blank"
+                    rel="noreferrer"
+                    >Get Directions →</a
+                  >
+                </div>
+              </div>
+              <div
+                class="flex items-start space-x-4 border-t border-slate-100 pt-4"
+              >
+                <div
+                  class="w-10 h-10 rounded-lg bg-navy-900 flex items-center justify-center text-gold-400 shrink-0 mt-1"
+                >
+                  <span class="material-symbols-outlined">schedule</span>
+                </div>
+                <div>
+                  <h4
+                    class="font-body text-xs font-bold text-slate-400 uppercase tracking-wider"
+                  >
+                    Hours
+                  </h4>
+                  <p class="font-body text-sm text-slate-700 leading-relaxed">
+                    Mon–Fri 9:00 am-9:00 pm · Sat 10:00 am-2:00 pm<br /><span
+                      class="text-slate-400 text-xs"
+                      >Closed Sundays and public holidays</span
+                    >
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  {% include "partials/footer.html" %}
-  <script src="/static/js/main.js"></script>
-</body>
+    {% include "partials/footer.html" %}
+    <script src="/static/js/main.js"></script>
+  </body>
 </html>

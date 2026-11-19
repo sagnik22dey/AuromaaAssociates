@@ -85,6 +85,41 @@ ROUTE_METADATA = {
         "description": "Learn about Auromaa Associates, an Indian IP law firm built on competence, confidentiality, commitment, and courtesy with 18+ years of legal excellence.",
         "canonical": f"{BASE_URL}/the-firm",
     },
+    "/our-mission": {
+        "title": "Our Mission | Auromaa Associates IP Law Firm",
+        "description": "Our mission is to help people and businesses in India and overseas protect, manage and enforce their intellectual property with focused expertise.",
+        "canonical": f"{BASE_URL}/our-mission",
+    },
+    "/our-vision": {
+        "title": "Our Vision | Auromaa Associates IP Law Firm",
+        "description": "To be the IPR firm of choice for people and businesses in India and chosen international markets, delivering accessible and fair legal counsel.",
+        "canonical": f"{BASE_URL}/our-vision",
+    },
+    "/our-values": {
+        "title": "Our Values | Auromaa Associates IP Law Firm",
+        "description": "Our practice rests on four values: competence, confidentiality, commitment, and courtesy, ensuring dedicated advocacy for your IP assets.",
+        "canonical": f"{BASE_URL}/our-values",
+    },
+    "/our-quality-policy": {
+        "title": "Our Quality Policy | Auromaa Associates IP Law Firm",
+        "description": "At Auromaa Associates, quality means accurate advice, careful work, transparent fees, and clear communication on every IP matter.",
+        "canonical": f"{BASE_URL}/our-quality-policy",
+    },
+    "/awards": {
+        "title": "Awards & Professional Standing | Auromaa Associates",
+        "description": "Recognized across India for 18+ years of IP excellence, Bar Council compliance, and international affiliations with AIPPI, APAA, and INTA.",
+        "canonical": f"{BASE_URL}/awards",
+    },
+    "/our-clients": {
+        "title": "Our Clients | Auromaa Associates IP Law Firm",
+        "description": "Auromaa Associates provides IP counsel to corporate entities, manufacturers, and innovators including Shyam SEL, Skipper, Colekt, and Bioturm.",
+        "canonical": f"{BASE_URL}/our-clients",
+    },
+    "/gallery": {
+        "title": "Gallery | Auromaa Associates IP Law Firm",
+        "description": "A visual showcase of Auromaa Associates chambers, conference facilities, legal library, and academic engagements across India.",
+        "canonical": f"{BASE_URL}/gallery",
+    },
     "/our-team": {
         "title": "Our IP Lawyers & Patent Attorneys | Auromaa Associates",
         "description": "Meet our team of Bar Council enrolled IP advocates and registered patent agents, led by partner Sidhartha Das and senior associate Moitri Das.",
@@ -129,6 +164,36 @@ ROUTE_METADATA = {
         "title": "Semiconductor IC Layout Design Registration | Auromaa Associates",
         "description": "Registration and statutory protection for integrated circuit layout designs and microchip topologies in India.",
         "canonical": f"{BASE_URL}/practice-areas/semiconductor-ic-layout",
+    },
+    "/practice-areas/startup-msme": {
+        "title": "Startup & MSME IP Filings in India | Auromaa Associates",
+        "description": "Trademark, patent, and design filings for start-ups and MSMEs with fee concessions and strategic statutory protection.",
+        "canonical": f"{BASE_URL}/practice-areas/startup-msme",
+    },
+    "/practice-areas/pharmaceutical-ip": {
+        "title": "Pharmaceutical IP & Regulatory Counsel | Auromaa Associates",
+        "description": "Patent filing, oppositions, Section 3(d) analysis, and regulatory advice for pharmaceutical and life-sciences companies in India.",
+        "canonical": f"{BASE_URL}/practice-areas/pharmaceutical-ip",
+    },
+    "/practice-areas/insolvency-transactions": {
+        "title": "IP in Insolvency & Transactions | Auromaa Associates",
+        "description": "IP due diligence, assignments, recordals, and asset defense in corporate mergers, acquisitions, and IBC insolvency proceedings.",
+        "canonical": f"{BASE_URL}/practice-areas/insolvency-transactions",
+    },
+    "/practice-areas/licensing-franchising": {
+        "title": "Licensing, Franchising & Technology Transfer | Auromaa Associates",
+        "description": "Drafting and negotiating license, franchise, technology transfer, and confidentiality agreements for commercial IP exploitation.",
+        "canonical": f"{BASE_URL}/practice-areas/licensing-franchising",
+    },
+    "/practice-areas/ip-portfolio-audits": {
+        "title": "IP Portfolio Audits & Risk Reviews | Auromaa Associates",
+        "description": "Systematic audit of registered and unregistered intellectual property assets, flagging protection gaps, renewals, and legal risks.",
+        "canonical": f"{BASE_URL}/practice-areas/ip-portfolio-audits",
+    },
+    "/practice-areas/foreign-associate-desk": {
+        "title": "Foreign Associate Desk for Indian IP Filings | Auromaa Associates",
+        "description": "Dedicated desk for overseas law firms and foreign IP attorneys filing and prosecuting trademarks, patents, and designs in India.",
+        "canonical": f"{BASE_URL}/practice-areas/foreign-associate-desk",
     },
     "/ipr-abstract": {
         "title": "IPR Abstract & Legal Resources | Auromaa Associates",
@@ -180,6 +245,13 @@ ROUTE_METADATA = {
 SITEMAP_ENTRIES = [
     ("/", "weekly", "1.0"),
     ("/the-firm", "monthly", "0.8"),
+    ("/our-mission", "monthly", "0.8"),
+    ("/our-vision", "monthly", "0.8"),
+    ("/our-values", "monthly", "0.8"),
+    ("/our-quality-policy", "monthly", "0.8"),
+    ("/awards", "monthly", "0.7"),
+    ("/our-clients", "monthly", "0.8"),
+    ("/gallery", "monthly", "0.7"),
     ("/our-team", "monthly", "0.8"),
     ("/practice-areas", "monthly", "0.9"),
     ("/practice-areas/trademark", "monthly", "0.8"),
@@ -189,6 +261,12 @@ SITEMAP_ENTRIES = [
     ("/practice-areas/geographical-indications", "monthly", "0.8"),
     ("/practice-areas/plant-varieties", "monthly", "0.8"),
     ("/practice-areas/semiconductor-ic-layout", "monthly", "0.8"),
+    ("/practice-areas/startup-msme", "monthly", "0.8"),
+    ("/practice-areas/pharmaceutical-ip", "monthly", "0.8"),
+    ("/practice-areas/insolvency-transactions", "monthly", "0.8"),
+    ("/practice-areas/licensing-franchising", "monthly", "0.8"),
+    ("/practice-areas/ip-portfolio-audits", "monthly", "0.8"),
+    ("/practice-areas/foreign-associate-desk", "monthly", "0.8"),
     ("/ipr-abstract", "monthly", "0.7"),
     ("/faq", "monthly", "0.6"),
     ("/news", "weekly", "0.7"),
@@ -256,46 +334,52 @@ async def our_team(request: Request):
     return render_page(request, "pages/our_team.html", "/our-team", "our-team")
 
 
-@app.get("/our-mission")
-async def our_mission():
-    """Redirect to the mission section of the firm page."""
-    return RedirectResponse(url="/the-firm#mission", status_code=302)
+@app.get("/our-mission", response_class=HTMLResponse)
+async def our_mission(request: Request):
+    """Render our mission statement page."""
+    return render_page(request, "pages/our_mission.html", "/our-mission", "our-mission")
 
 
-@app.get("/our-vision")
-async def our_vision():
-    """Redirect to the vision section of the firm page."""
-    return RedirectResponse(url="/the-firm#vision", status_code=302)
+@app.get("/our-vision", response_class=HTMLResponse)
+async def our_vision(request: Request):
+    """Render our vision statement page."""
+    return render_page(request, "pages/our_vision.html", "/our-vision", "our-vision")
 
 
-@app.get("/our-values")
-async def our_values():
-    """Redirect to the values section of the firm page."""
-    return RedirectResponse(url="/the-firm#values", status_code=302)
+@app.get("/our-values", response_class=HTMLResponse)
+async def our_values(request: Request):
+    """Render our core values page."""
+    return render_page(request, "pages/our_values.html", "/our-values", "our-values")
 
 
-@app.get("/our-quality-policy")
-async def our_quality_policy():
-    """Redirect to the quality policy section of the firm page."""
-    return RedirectResponse(url="/the-firm#quality-policy", status_code=302)
+@app.get("/our-quality-policy", response_class=HTMLResponse)
+async def our_quality_policy(request: Request):
+    """Render our quality policy page."""
+    return render_page(request, "pages/our_quality_policy.html", "/our-quality-policy", "our-quality-policy")
 
 
-@app.get("/awards")
-async def awards():
-    """Redirect to the awards section of the firm page."""
-    return RedirectResponse(url="/the-firm#awards", status_code=302)
+@app.get("/awards", response_class=HTMLResponse)
+async def awards(request: Request):
+    """Render awards and professional standing page."""
+    return render_page(request, "pages/awards.html", "/awards", "awards")
+
+
+@app.get("/our-clients", response_class=HTMLResponse)
+async def our_clients(request: Request):
+    """Render client portfolio showcase page."""
+    return render_page(request, "pages/our_clients.html", "/our-clients", "our-clients")
 
 
 @app.get("/testimonials")
 async def testimonials():
-    """Redirect to the testimonials section of the firm page."""
-    return RedirectResponse(url="/the-firm#testimonials", status_code=302)
+    """Redirect legacy testimonials URL to our-clients."""
+    return RedirectResponse(url="/our-clients", status_code=301)
 
 
-@app.get("/gallery")
-async def gallery():
-    """Redirect to the gallery section of the firm page."""
-    return RedirectResponse(url="/the-firm#gallery", status_code=302)
+@app.get("/gallery", response_class=HTMLResponse)
+async def gallery(request: Request):
+    """Render firm gallery and chambers showcase page."""
+    return render_page(request, "pages/gallery.html", "/gallery", "gallery")
 
 
 @app.get("/advisors-instructors")

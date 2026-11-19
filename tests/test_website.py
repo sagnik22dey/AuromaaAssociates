@@ -22,6 +22,13 @@ from main import app
 HTML_ROUTES = [
     "/",
     "/the-firm",
+    "/our-mission",
+    "/our-vision",
+    "/our-values",
+    "/our-quality-policy",
+    "/awards",
+    "/our-clients",
+    "/gallery",
     "/our-team",
     "/practice-areas",
     "/practice-areas/trademark",
@@ -356,6 +363,29 @@ async def test_disclaimer_cookie_behavior(client: AsyncClient):
     assert overlay_home is not None
     assert "hidden" in overlay_home.get("class", [])
     assert "display: none;" in overlay_home.get("style", "")
+
+
+@pytest.mark.anyio
+async def test_testimonials_redirect_and_clients(client: AsyncClient):
+    """Verify legacy testimonials URL redirects to our-clients and client cards are present."""
+    response = await client.get("/testimonials", follow_redirects=False)
+    assert response.status_code == 301
+    assert response.headers.get("location") == "/our-clients"
+
+    clients_res = await client.get("/our-clients")
+    assert clients_res.status_code == 200
+    clients_text = BeautifulSoup(clients_res.text, "html.parser").get_text()
+    assert "Shyam SEL & Power Limited" in clients_text
+    assert "Skipper Limited" in clients_text
+    assert "Colekt Stockholm AB" in clients_text
+    assert "Samriddhi Rice Mill Pvt Ltd" in clients_text
+    assert "Tarsons Products Private Limited" in clients_text
+    assert "Bioturm GMBH" in clients_text
+    assert "Dencol India Pvt Limited" in clients_text
+    assert "Finorchem Private Limited" in clients_text
+    assert "Sony Kaushiki Kaisa" in clients_text
+    assert "Heinz Italia" in clients_text
+
 
     inner_page_visit = await client.get("/the-firm", cookies={"auromaa_disclaimer_agreed": "true"})
     assert inner_page_visit.status_code == 200

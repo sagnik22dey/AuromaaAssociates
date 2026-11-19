@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  {% include "partials/head.html" %}
+</head>
+<body class="bg-background text-on-surface antialiased">
+
+  {% include "partials/disclaimer_modal.html" %}
+  {% include "partials/callback_modal.html" %}
+  {% include "partials/topbar.html" %}
+  {% set active_page = "gallery" %}
+  {% include "partials/nav.html" %}
+
+  <section class="relative bg-navy-950 text-white py-20 px-6 lg:px-12 border-b border-slate-800 overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(rgba(212, 175, 55, 0.4) 1px, transparent 1px); background-size: 32px 32px;"></div>
+    <div class="max-w-[1280px] mx-auto relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center space-x-2 border border-gold-500/40 px-3.5 py-1.5 rounded-full bg-navy-900/60 backdrop-blur-sm mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+          <span class="font-nav text-[11px] font-semibold text-gold-400 uppercase tracking-widest">Chambers &amp; Proceedings</span>
+        </div>
+        <h1 class="font-headline text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 tracking-tight leading-tight">
+          Gallery
+        </h1>
+        <p class="font-body text-lg text-slate-300 max-w-2xl leading-relaxed font-light">
+          Our chambers, library resources, and national seminar appearances across India.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="sticky top-[73px] z-30 bg-navy-900/95 backdrop-blur-md border-b border-slate-800 px-6 lg:px-12 py-3 overflow-x-auto">
+    <div class="max-w-[1280px] mx-auto flex items-center space-x-8 text-xs font-nav font-semibold uppercase tracking-wider text-slate-300 shrink-0">
+      <a class="hover:text-gold-400 transition-colors pb-1" href="/the-firm">The Firm</a>
+      <a class="hover:text-gold-400 transition-colors pb-1" href="/our-mission">Mission</a>
+      <a class="hover:text-gold-400 transition-colors pb-1" href="/our-vision">Vision</a>
+      <a class="hover:text-gold-400 transition-colors pb-1" href="/our-values">Values</a>
+      <a class="hover:text-gold-400 transition-colors pb-1" href="/our-quality-policy">Quality Policy</a>
+      <a class="hover:text-gold-400 transition-colors pb-1" href="/awards">Awards</a>
+      <a class="hover:text-gold-400 transition-colors pb-1" href="/our-clients">Clients</a>
+      <a class="text-gold-400 border-b-2 border-gold-400 pb-1" href="/gallery">Gallery</a>
+    </div>
+  </div>
+
+  <section class="py-20 bg-white text-slate-900">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl mb-14">
+        <span class="text-gold-500 font-nav text-[11px] font-bold uppercase tracking-widest block mb-2">Visual Showcase</span>
+        <h2 class="font-headline text-3xl md:text-4xl font-semibold text-navy-950">Chambers, Research &amp; Academic Engagements</h2>
+        <div class="w-16 h-1 bg-gold-500 mt-4 rounded"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="rounded-xl overflow-hidden shadow-md border border-slate-200 group relative">
+          <img src="/static/images/slider-1.jpg" alt="Auromaa Associates Chambers" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"/>
+          <div class="absolute inset-0 bg-navy-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+            <span class="text-gold-400 font-nav text-xs uppercase tracking-wider font-semibold">Chambers &amp; Conference</span>
+            <span class="text-white text-sm font-headline font-medium mt-1">Auromaa Associates Kolkata</span>
+          </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-md border border-slate-200 group relative">
+          <img src="/static/images/slider-2.jpg" alt="Auromaa Associates IP Research" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"/>
+          <div class="absolute inset-0 bg-navy-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+            <span class="text-gold-400 font-nav text-xs uppercase tracking-wider font-semibold">IP Documentation</span>
+            <span class="text-white text-sm font-headline font-medium mt-1">Statutory Registry Filings</span>
+          </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-md border border-slate-200 group relative">
+          <img src="/static/images/slider-3.jpg" alt="Auromaa Associates Legal Library" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"/>
+          <div class="absolute inset-0 bg-navy-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+            <span class="text-gold-400 font-nav text-xs uppercase tracking-wider font-semibold">Legal Library</span>
+            <span class="text-white text-sm font-headline font-medium mt-1">Research &amp; Case Law Compendia</span>
+          </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-md border border-slate-200 group relative">
+          <img src="/static/images/slider-4.jpg" alt="Auromaa Associates Seminars" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"/>
+          <div class="absolute inset-0 bg-navy-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+            <span class="text-gold-400 font-nav text-xs uppercase tracking-wider font-semibold">Academic Seminars</span>
+            <span class="text-white text-sm font-headline font-medium mt-1">National IPR Workshops</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-slate-50 border-t border-b border-slate-200">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-gold-500 font-nav text-[11px] font-bold uppercase tracking-widest block mb-2">Our Environment</span>
+          <h2 class="font-headline text-3xl md:text-4xl font-semibold text-navy-950 leading-tight">
+            Designed for Rigorous IP Analysis
+          </h2>
+          <div class="w-16 h-1 bg-gold-500 mt-4 rounded"></div>
+          <p class="font-body text-base text-slate-700 leading-relaxed">
+            Our offices in Kolkata feature dedicated patent search workstations, physical and digital repositories of IP case laws, confidential conference facilities, and digital docketing terminals to ensure total security and client confidentiality.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="bg-navy-900 text-white rounded-2xl p-8 lg:p-10 shadow-xl border-t-4 border-gold-500 space-y-4">
+            <h3 class="font-headline text-2xl font-semibold text-white">Chambers Facilities</h3>
+            <div class="space-y-3 font-body text-sm text-slate-300">
+              <div class="flex items-center space-x-3">
+                <span class="material-symbols-outlined text-gold-400 text-lg">check_circle</span>
+                <span>Secure Client Consultation Rooms</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="material-symbols-outlined text-gold-400 text-lg">check_circle</span>
+                <span>Specialized Patent &amp; Trademark Repositories</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="material-symbols-outlined text-gold-400 text-lg">check_circle</span>
+                <span>Virtual High Court &amp; Registry Hearing Setup</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-navy-950 text-white relative overflow-hidden" id="enquiry">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-12 relative z-10">
+      <div class="bg-navy-900/90 border border-slate-800 rounded-2xl p-10 lg:p-14 text-center max-w-3xl mx-auto shadow-2xl">
+        <span class="text-gold-400 font-nav text-xs font-bold uppercase tracking-widest block mb-3">Visit Or Consult</span>
+        <h2 class="font-headline text-3xl md:text-4xl font-semibold text-white mb-4">Connect With Auromaa Associates</h2>
+        <p class="font-body text-slate-300 text-base mb-8 leading-relaxed max-w-xl mx-auto">
+          Schedule an in-person consultation at our Kolkata chambers or a virtual conference with our advocates.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/#enquiry" class="w-full sm:w-auto inline-flex items-center justify-center bg-gold-500 hover:bg-gold-400 text-navy-950 px-8 py-3.5 rounded-lg font-nav text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95">
+            <span>Send an Enquiry</span>
+            <span class="material-symbols-outlined text-base ml-2">send</span>
+          </a>
+          <a href="/contact" class="w-full sm:w-auto inline-flex items-center justify-center bg-transparent hover:bg-navy-800 text-slate-200 border border-slate-700 hover:border-gold-500 px-8 py-3.5 rounded-lg font-nav text-xs font-bold uppercase tracking-wider transition-all">
+            <span>Contact Information</span>
+            <span class="material-symbols-outlined text-base ml-2">arrow_forward</span>
+          </a>
+        </div>
+
+        <p class="font-body text-[11px] text-slate-400 mt-8 max-w-xl mx-auto leading-relaxed border-t border-slate-800 pt-6">
+          As per the rules of the Bar Council of India, advocates may not solicit work or advertise. This page gives general information about the firm and is not legal advice.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {% include "partials/footer.html" %}
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

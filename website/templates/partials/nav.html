@@ -12,14 +12,15 @@
     <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
       <a class="nav-link {% if active_page == 'home' %}active{% endif %}" href="/">Home</a>
       <div class="relative group">
-        <a class="nav-link {% if active_page in ['the-firm', 'our-mission', 'our-vision', 'our-values', 'our-quality-policy', 'awards', 'testimonials', 'gallery', 'our-team', 'advisors-instructors', 'partners', 'our-associate-partner', 'experts', 'attorneys-support-staff'] %}active{% endif %} flex items-center gap-1" href="/the-firm">
+        <a class="nav-link {% if active_page in ['the-firm', 'our-mission', 'our-vision', 'our-values', 'our-quality-policy', 'awards', 'our-clients', 'testimonials', 'gallery', 'our-team', 'advisors-instructors', 'partners', 'our-associate-partner', 'experts', 'attorneys-support-staff'] %}active{% endif %} flex items-center gap-1" href="/the-firm">
           The Firm
           <span class="material-symbols-outlined text-xs" style="font-size:14px">expand_more</span>
         </a>
         <div class="absolute top-full left-0 mt-1 w-64 bg-navy-950 border border-slate-800 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
-          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/the-firm#mission">Our Mission</a>
-          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/the-firm#vision">Our Vision</a>
-          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/the-firm#values">Our Values</a>
+          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/the-firm">About The Firm</a>
+          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/our-mission">Our Mission</a>
+          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/our-vision">Our Vision</a>
+          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/our-values">Our Values</a>
           <div class="relative group/sub">
             <a class="dropdown-link flex items-center justify-between hover:text-gold-400 hover:bg-navy-900" href="/our-team">
               <span>Our Team</span>
@@ -33,10 +34,10 @@
               <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/our-team#support-staff">Attorneys &amp; Support Staff</a>
             </div>
           </div>
-          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/the-firm#quality-policy">Our Quality Policy</a>
-          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/the-firm#awards">Awards</a>
-          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/the-firm#testimonials">Testimonials</a>
-          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/the-firm#gallery">Gallery</a>
+          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/our-quality-policy">Our Quality Policy</a>
+          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/awards">Awards</a>
+          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/our-clients">Our Clients</a>
+          <a class="dropdown-link hover:text-gold-400 hover:bg-navy-900" href="/gallery">Gallery</a>
         </div>
       </div>
       <div class="relative group">
@@ -52,6 +53,12 @@
           <a class="dropdown-link" href="/practice-areas/geographical-indications">Geographical Indications</a>
           <a class="dropdown-link" href="/practice-areas/plant-varieties">Plant Varieties &amp; Farmers' Rights</a>
           <a class="dropdown-link" href="/practice-areas/semiconductor-ic-layout">Semiconductor IC Layout Designs</a>
+          <a class="dropdown-link" href="/practice-areas/startup-msme">Startup &amp; MSME IP Filings</a>
+          <a class="dropdown-link" href="/practice-areas/pharmaceutical-ip">Pharmaceutical IP &amp; Regulatory</a>
+          <a class="dropdown-link" href="/practice-areas/insolvency-transactions">IP in Insolvency &amp; Transactions</a>
+          <a class="dropdown-link" href="/practice-areas/licensing-franchising">Licensing &amp; Technology Transfer</a>
+          <a class="dropdown-link" href="/practice-areas/ip-portfolio-audits">IP Portfolio Audits</a>
+          <a class="dropdown-link" href="/practice-areas/foreign-associate-desk">Foreign Associate Desk</a>
         </div>
       </div>
       <a class="nav-link {% if active_page == 'ipr-abstract' %}active{% endif %}" href="/ipr-abstract">IPR Abstract</a>
@@ -75,15 +82,15 @@
     <a class="mobile-nav-link" href="/">Home</a>
     <div class="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-gold-400">The Firm</div>
     <div class="pl-4 space-y-1">
-      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm#overview">Firm Overview</a>
-      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm#mission">Our Mission</a>
-      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm#vision">Our Vision</a>
-      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm#values">Our Values</a>
+      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm">About The Firm</a>
+      <a class="mobile-nav-link text-sm py-1.5" href="/our-mission">Our Mission</a>
+      <a class="mobile-nav-link text-sm py-1.5" href="/our-vision">Our Vision</a>
+      <a class="mobile-nav-link text-sm py-1.5" href="/our-values">Our Values</a>
       <a class="mobile-nav-link text-sm py-1.5" href="/our-team">Our Team</a>
-      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm#quality-policy">Our Quality Policy</a>
-      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm#awards">Awards</a>
-      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm#testimonials">Testimonials</a>
-      <a class="mobile-nav-link text-sm py-1.5" href="/the-firm#gallery">Gallery</a>
+      <a class="mobile-nav-link text-sm py-1.5" href="/our-quality-policy">Our Quality Policy</a>
+      <a class="mobile-nav-link text-sm py-1.5" href="/awards">Awards</a>
+      <a class="mobile-nav-link text-sm py-1.5" href="/our-clients">Our Clients</a>
+      <a class="mobile-nav-link text-sm py-1.5" href="/gallery">Gallery</a>
     </div>
     <a class="mobile-nav-link" href="/practice-areas">Practice Areas</a>
     <a class="mobile-nav-link" href="/ipr-abstract">IPR Abstract</a>
