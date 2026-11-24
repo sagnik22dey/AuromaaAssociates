@@ -384,8 +384,8 @@ async def gallery(request: Request):
 
 @app.get("/advisors-instructors")
 async def advisors_instructors():
-    """Redirect to the advisors section of our team page."""
-    return RedirectResponse(url="/our-team#advisors", status_code=302)
+    """Redirect to the team page partners section."""
+    return RedirectResponse(url="/our-team#partners", status_code=302)
 
 
 @app.get("/partners")

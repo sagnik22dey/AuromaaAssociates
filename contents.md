@@ -26,7 +26,7 @@ Buttons:
    Patent Filing for Inventors and Innovators
    Patentability searches, specification drafting, filing in India and under the PCT, and responses to examination reports.
    Enforcing Your Intellectual Property Rights
-   Legal notices, oppositions, cancellations, and infringement and passing-off actions to defend your trademarks, copyright and designs.
+   Legal notices, oppositions, cancellations, and infringement and passing-off actions to defend your patents, trademarks, copyright, designs and other IP creations.
 
 Only slide 1's headline is the H1; slides 2-4 use H2.
 Autoplay every 6 seconds, pause on hover, show dots, allow swipe on mobile.

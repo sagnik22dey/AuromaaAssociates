@@ -383,7 +383,8 @@ async def test_testimonials_redirect_and_clients(client: AsyncClient):
     assert "Bioturm GMBH" in clients_text
     assert "Dencol India Pvt Limited" in clients_text
     assert "Finorchem Private Limited" in clients_text
-    assert "Sony Kaushiki Kaisa" in clients_text
+    assert "Sony Kabushiki Kaisha" in clients_text
+    assert "UST Global PTE (Singapore) Limited" in clients_text
     assert "Heinz Italia" in clients_text
 
 
@@ -394,3 +395,25 @@ async def test_testimonials_redirect_and_clients(client: AsyncClient):
     assert overlay_inner is not None
     assert "hidden" in overlay_inner.get("class", [])
     assert "display: none;" in overlay_inner.get("style", "")
+
+
+@pytest.mark.anyio
+async def test_november_content_updates(client: AsyncClient):
+    """Verify November 2026 content changes across home, team, and clients."""
+    home_res = await client.get("/")
+    assert home_res.status_code == 200
+    assert "defend your patents, trademarks, copyright, designs and other IP creations." in home_res.text
+    assert "Dr. Nirupama Das" in home_res.text
+    assert "/static/images/NirupamaDas.png" in home_res.text
+
+    team_res = await client.get("/our-team")
+    assert team_res.status_code == 200
+    assert "Dr. Nirupama Das" in team_res.text
+    assert "Ph.D. (Zoology) · 28 Years Experience" in team_res.text
+    assert "/static/images/NirupamaDas.png" in team_res.text
+    assert "Mr. K. K. Modak" not in team_res.text
+
+    redirect_res = await client.get("/advisors-instructors", follow_redirects=False)
+    assert redirect_res.status_code == 302
+    assert redirect_res.headers.get("location") == "/our-team#partners"
+
