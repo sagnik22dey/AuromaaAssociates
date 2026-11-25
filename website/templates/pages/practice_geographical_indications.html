@@ -1,0 +1,39 @@
+{% extends "layouts/practice_area.html" %}
+{% from "partials/practice_macros.html" import services_section, steps_section, faq_section %}
+
+{% set active_practice = "geographical-indications" %}
+{% set hero_title = "Geographical Indication (GI) Registration" %}
+{% set lead_paragraphs = [
+  "A geographical indication links a product to the place it comes from, and to the quality or reputation that place gives it. A GI tag stops producers outside the region from using the name. Auromaa Associates helps producer groups, cooperatives and authorities with GI tag registration in India and internationally, and protects registered GIs from misuse."
+] %}
+
+{% set cta_heading = "Protect Your Region's Product" %}
+{% set cta_line = "Tell us about your product and its origin, and we will explain whether it qualifies." %}
+{% set cta_buttons = [
+  {"label": "Check GI Eligibility", "primary": true, "preselect": "GI"},
+  {"label": "Send an Enquiry", "primary": false, "preselect": ""}
+] %}
+{% set cta_small_print = "This page gives general information and is not legal advice. Rules vary by country and may change." %}
+
+{% block content %}
+  {{ services_section("Our GI Services", [
+    {"label": "Opinions and searches:", "text": "advice on whether your product qualifies, and novelty and availability searches."},
+    {"label": "GI tag registration:", "text": "preparing and filing domestic and foreign GI applications, and prosecuting them until registration."},
+    {"label": "Authorised users:", "text": "helping individual producers register to use an existing GI, where the law provides for it."},
+    {"label": "Licensing:", "text": "drafting agreements for the use of GI-protected names."},
+    {"label": "Enforcement:", "text": "infringement analysis, legal notices and GI litigation against misuse of the name."}
+  ], "bg-white") }}
+
+  {{ steps_section("How to Get a GI Tag", [
+    {"label": "Check eligibility.", "text": "The product must have qualities, a reputation or features linked to its place of origin."},
+    {"label": "Form or identify the applicant.", "text": "Applications are usually filed by a producers' association, cooperative or public authority, not a single business."},
+    {"label": "Prepare the application.", "text": "This includes the product's history, production method, the boundaries of the region and evidence of its link to that place."},
+    {"label": "Examination and publication.", "text": "The registry examines the application and publishes it so others can object."},
+    {"label": "Registration.", "text": "Once registered, the GI appears on the official register, and producers can apply to become authorised users."}
+  ], "", "bg-slate-50") }}
+
+  {{ faq_section("Frequently Asked Questions", [
+    {"question": "Where can I find a GI tag list?", "answer": "Each country's GI registry publishes a list of registered geographical indications. We can check whether your product, or a similar name, is already registered."},
+    {"question": "Can an individual business get a GI tag?", "answer": "Usually not on its own. A GI belongs to the producers of a region as a group, but an individual producer can often register as an authorised user of an existing GI."}
+  ], "bg-white") }}
+{% endblock %}

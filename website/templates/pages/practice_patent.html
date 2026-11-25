@@ -1,0 +1,46 @@
+{% extends "layouts/practice_area.html" %}
+{% from "partials/practice_macros.html" import services_section, steps_section, prose_section, faq_section %}
+
+{% set active_practice = "patent" %}
+{% set hero_title = "Patent Filing and Prosecution" %}
+{% set lead_paragraphs = [
+  "Auromaa Associates specialises in patent filing and prosecution for inventors, start-ups and companies in India and internationally. We take national, PCT and national phase applications from first filing through examination to patent registration, and support you after grant."
+] %}
+
+{% set cta_heading = "Talk to Our Patent Team" %}
+{% set cta_line = "Tell us about your invention and where you want protection, and we will explain your filing options, timeline and likely costs." %}
+{% set cta_buttons = [
+  {"label": "Send an Enquiry", "primary": true, "preselect": ""},
+  {"label": "Request a Patent Search", "primary": false, "preselect": "Patent"}
+] %}
+{% set cta_small_print = "This page gives general information and is not legal advice. Official fees and rules are set by each patent office and may change." %}
+
+{% block content %}
+  {{ services_section("Our Patent Services", [
+    {"label": "Patent filing:", "text": "prior art and patentability searches, drafting specifications to Indian, USPTO and EPO standards, provisional and complete applications, PCT and national phase filings, and translation."},
+    {"label": "Patent prosecution:", "text": "responses to examination reports, hearings before patent offices worldwide, pre-grant and post-grant oppositions, and file wrapper reviews."},
+    {"label": "After grant:", "text": "annuity payments, working statements and patent portfolio management."},
+    {"label": "Strategy and enforcement:", "text": "freedom-to-operate (FTO) searches, infringement analysis, competitor monitoring, licences and transaction documents, dispute settlement, patent litigation and in-house training."}
+  ], "bg-white") }}
+
+  {{ steps_section("How to Get a Patent", [
+    {"label": "Patent search.", "text": "We check whether your invention is new and inventive before you spend on filing."},
+    {"label": "Provisional patent application.", "text": "If your invention is still developing, a provisional application secures an early filing date."},
+    {"label": "Complete application.", "text": "The full application, in your home country or under the PCT, generally follows within 12 months to keep that early date."},
+    {"label": "National phase and examination.", "text": "We file in each country you choose and request examination within each office's deadline."},
+    {"label": "Prosecution and grant.", "text": "Our prosecution team responds to examination reports, attends hearings and resolves objections until the patent is granted."}
+  ], "", "bg-slate-50") }}
+
+  {{ prose_section("Patents for Startups", [
+    "Many patent offices, including India's and the USPTO, offer reduced fees for start-ups and small entities, and some allow faster examination. We help start-ups claim these benefits and decide where to file first, so their patent budget goes further."
+  ], [], "", "bg-white") }}
+
+  {{ prose_section("Software Patents", [
+    "Most patent systems do not protect computer code on its own, but software-based inventions can be patented when they solve a technical problem. The tests differ between countries, so we draft claims that meet the standards of each office where you file."
+  ], [], "", "bg-slate-50") }}
+
+  {{ faq_section("Frequently Asked Questions", [
+    {"question": "What is the patent registration cost?", "answer": "It depends on the countries you choose, your applicant category and the size of the application. Official fees are lowest for individuals, start-ups and small entities in many countries. We give you a full estimate, including official and professional fees, before work begins."},
+    {"question": "How do I check my patent status?", "answer": "Each patent office has an online register, such as IP India's patent search, the USPTO's Patent Center and the European Patent Register. Our clients also receive regular status updates from us."}
+  ], "bg-white") }}
+{% endblock %}

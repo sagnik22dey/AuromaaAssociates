@@ -1,0 +1,43 @@
+{% extends "layouts/practice_area.html" %}
+{% from "partials/practice_macros.html" import services_section, prose_section, faq_section %}
+
+{% set active_practice = "plant-varieties" %}
+{% set hero_title = "Plant Variety Registration & Farmers' Rights Protection" %}
+{% set lead_paragraphs = [
+  "New plant varieties take years of breeding to develop. In India, the Protection of Plant Varieties and Farmers' Rights Act, 2001 (PPV&FR Act) lets breeders, institutions and farmers register a variety and control how its seed is produced and sold. Auromaa Associates handles plant variety registration under the Act, from the first application to licensing the registered variety."
+] %}
+
+{% set cta_heading = "Register Your Plant Variety" %}
+{% set cta_line = "Tell us about your variety, and we will explain whether and how it can be registered." %}
+{% set cta_buttons = [
+  {"label": "Check Eligibility", "primary": true, "preselect": "Plant Variety"},
+  {"label": "Send an Enquiry", "primary": false, "preselect": ""}
+] %}
+{% set cta_small_print = "This page gives general information and is not legal advice." %}
+
+{% block content %}
+  {{ services_section("Our Plant Variety Services", [
+    {"label": "Eligibility advice:", "text": "whether your variety can be registered, and under which category."},
+    {"label": "Plant variety registration:", "text": "preparing and filing applications with the PPV&FR Authority, including the variety denomination and supporting data."},
+    {"label": "Prosecution:", "text": "following the application through DUS testing, publication and any opposition until registration."},
+    {"label": "Assignments and licences:", "text": "drafting agreements so you can transfer or license seed production rights."}
+  ], "bg-white") }}
+
+  {{ prose_section("Which Varieties Can Be Registered", [
+    "The PPV&FR Act covers four kinds of variety:"
+  ], [
+    {"label": "New varieties,", "text": "bred by a company, institution or individual."},
+    {"label": "Extant varieties,", "text": "already notified or in common use."},
+    {"label": "Farmers' varieties,", "text": "developed or conserved by farming communities."},
+    {"label": "Essentially derived varieties,", "text": "developed mainly from an existing protected variety."}
+  ], "A new variety must be novel, and pass DUS testing: it must be distinct from other varieties, uniform, and stable across generations.", "bg-slate-50") }}
+
+  {{ prose_section("Rights for Breeders and Farmers", [
+    "Registration gives breeders exclusive rights to produce, sell and export the variety. The PPVFR Act also protects farmers: they can still save, use, exchange and sell farm-saved seed, though not as branded seed of a protected variety."
+  ], [], "", "bg-white") }}
+
+  {{ faq_section("Frequently Asked Questions", [
+    {"question": "How long does protection last?", "answer": "Protection lasts up to 18 years for trees and vines and up to 15 years for other crops, subject to renewal."},
+    {"question": "Can farmers register a variety?", "answer": "Yes. A farmer who develops or conserves a variety can register it, in the same way as a breeder."}
+  ], "bg-slate-50") }}
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layouts/practice_area.html" %}
+{% from "partials/practice_macros.html" import services_section, prose_section, faq_section %}
+
+{% set active_practice = "semiconductor-ic-layout" %}
+{% set hero_title = "Semiconductor IC Layout Design Registration" %}
+{% set lead_paragraphs = [
+  "The layout of an integrated circuit, the three-dimensional arrangement of its transistors and connections, takes significant time and money to develop and is easy to copy. IC layout design registration gives chip designers exclusive rights over that layout. Auromaa Associates helps semiconductor companies, design houses and research institutions with semiconductor layout design registration in India and internationally."
+] %}
+
+{% set cta_heading = "Protect Your Chip Design" %}
+{% set cta_line = "Tell us about your layout design and your target markets, and we will explain your options." %}
+{% set cta_buttons = [
+  {"label": "Check Eligibility", "primary": true, "preselect": "IC Layout"},
+  {"label": "Send an Enquiry", "primary": false, "preselect": ""}
+] %}
+{% set cta_small_print = "This page gives general information and is not legal advice." %}
+
+{% block content %}
+  {{ services_section("Our Layout Design Services", [
+    {"label": "Eligibility advice:", "text": "whether your layout design qualifies, and when to file."},
+    {"label": "Registration:", "text": "preparing and filing applications for integrated circuit layout design protection, including the drawings and technical details."},
+    {"label": "Prosecution:", "text": "following the application through examination and any opposition until registration."},
+    {"label": "Assignments and licences:", "text": "drafting agreements to transfer or license your layout design."}
+  ], "bg-white") }}
+
+  {{ prose_section("How Layout Designs Are Protected", [
+    "In India, the Semiconductor Integrated Circuits Layout-Design Act, 2000 (SICLD Act) protects layout designs that are original and inherently distinctive. A design can still be registered if it has been commercially exploited for no more than two years before filing, so early filing matters. Registration gives exclusive rights for 10 years.",
+    "Most other countries also protect layout designs, as required by the WTO's TRIPS Agreement. The United States calls them mask works. We help you plan chip design protection in each market where your chips are made or sold."
+  ], [], "", "bg-slate-50") }}
+
+  {{ prose_section("Layout Design or Patent?", [
+    "A patent protects how a circuit works, if it is new and inventive. A layout design registration protects the physical layout itself, even when the underlying technology is not patentable. Many semiconductor companies use both as part of their semiconductor IP protection."
+  ], [], "", "bg-white") }}
+
+  {{ faq_section("Frequently Asked Questions", [
+    {"question": "Is registration needed for protection?", "answer": "In India, yes. The SICLD Act only protects registered layout designs."},
+    {"question": "Can I register a design that is already on the market?", "answer": "Yes, if it has been commercially exploited for no more than two years before you file."}
+  ], "bg-slate-50") }}
+{% endblock %}

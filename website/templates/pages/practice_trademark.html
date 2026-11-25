@@ -1,0 +1,49 @@
+{% extends "layouts/practice_area.html" %}
+{% from "partials/practice_macros.html" import services_section, steps_section, prose_section, faq_section %}
+
+{% set active_practice = "trademark" %}
+{% set hero_title = "Trademark Registration & Protection Services" %}
+{% set lead_paragraphs = [
+  "Your brand name and logo are among your most valuable assets.",
+  "Auromaa Associates helps businesses, start-ups and individuals with trademark registration in India and abroad, and protects those marks once they are registered. Our trademark lawyers and registered trademark agents handle every step, from the first trademark search to renewal and enforcement."
+] %}
+
+{% set cta_heading = "Talk to a Trademark Attorney" %}
+{% set cta_line = "Tell us about your brand, and we will explain your options, timeline and costs." %}
+{% set cta_buttons = [
+  {"label": "Request a Trademark Search", "primary": true, "preselect": "Trademark"},
+  {"label": "Send an Enquiry", "primary": false, "preselect": ""}
+] %}
+{% set cta_small_print = "This page gives general information and is not legal advice. Official fees are set by the Trade Marks Registry and may change." %}
+
+{% block content %}
+  {{ services_section("Our Trademark Services", [
+    {"label": "Trademark search and opinions:", "text": "availability searches and written opinions on whether your brand name or logo can be registered."},
+    {"label": "Brand and logo registration:", "text": "preparing and filing Indian and foreign trademark applications, including international filings under the Madrid Protocol."},
+    {"label": "Prosecution:", "text": "replies to examination reports, hearings and follow-up until the mark is registered."},
+    {"label": "Oppositions and rectification:", "text": "filing and defending oppositions, and rectification or cancellation of conflicting marks."},
+    {"label": "Renewals and portfolio management:", "text": "tracking deadlines and renewing registrations every 10 years."},
+    {"label": "Transactions:", "text": "assignments, licences and other trademark agreements."},
+    {"label": "Enforcement:", "text": "action against trademark infringement and passing off, including legal notices and court proceedings."}
+  ], "bg-white") }}
+
+  {{ steps_section("How to Register a Trademark", [
+    {"label": "Trademark search.", "text": "We check the register for identical or similar marks."},
+    {"label": "Choose your trademark classes.", "text": "Goods and services fall into 45 classes, and you file in each class you trade in."},
+    {"label": "File the application.", "text": "We handle trademark registration online with the Trade Marks Registry."},
+    {"label": "Examination.", "text": "The Registry examines the application, and we reply to any objections."},
+    {"label": "Publication.", "text": "The mark is advertised in the Trade Marks Journal, where others may oppose it."},
+    {"label": "Registration certificate.", "text": "If there is no opposition, or it is resolved in your favour, the trademark registration certificate is issued."}
+  ], "The trademark registration process usually runs as follows:", "bg-slate-50") }}
+
+  {{ prose_section("Trademark Registration for Startups and MSMEs", [
+    "In India, individuals, recognised start-ups and small enterprises (including micro and small businesses registered as MSMEs) pay half the official fee that companies pay. We handle MSME trademark filings at the lower rate. Brand name registration before you launch also saves you from being forced to rebrand later."
+  ], [], "", "bg-white") }}
+
+  {{ faq_section("Frequently Asked Questions", [
+    {"question": "What are the trademark registration fees in India?", "answer": "The official fee for online filing is INR 4,500 per class for individuals, start-ups and small enterprises, and INR 9,000 per class for other applicants. The total trademark registration cost depends on the number of classes and any objections; we give you an estimate before filing."},
+    {"question": "How do I find the right trademark class?", "answer": "We use the official trademark class list to match your goods and services, so your protection covers what you actually sell."},
+    {"question": "How do I check my trademark status?", "answer": "You can check the status of any Indian application on IP India's online portal with its application number. We also send our clients regular updates."},
+    {"question": "What is the difference between infringement and passing off?", "answer": "Trademark infringement protects registered marks. Passing off protects unregistered brands against imitation that misleads customers."}
+  ], "bg-slate-50") }}
+{% endblock %}

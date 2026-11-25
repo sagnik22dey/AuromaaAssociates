@@ -245,8 +245,38 @@ function initCallbackModal() {
 
 function initEnquiryForm() {
   const form = document.getElementById("enquiry-form");
+  const areaSelect = document.getElementById("area_of_interest");
   const successMsg = document.getElementById("enquiry-success");
   const errorMsg = document.getElementById("enquiry-error");
+
+  const params = new URLSearchParams(window.location.search);
+  const requestedArea = params.get("area");
+  if (requestedArea && areaSelect) {
+    const matched = Array.from(areaSelect.options).find(
+      (opt) => opt.value.toLowerCase() === requestedArea.toLowerCase()
+    );
+    if (matched) {
+      areaSelect.value = matched.value;
+    }
+  }
+
+  document.querySelectorAll("[data-preselect-area]").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const targetArea = trigger.getAttribute("data-preselect-area");
+      if (targetArea && areaSelect) {
+        const matched = Array.from(areaSelect.options).find(
+          (opt) => opt.value.toLowerCase() === targetArea.toLowerCase()
+        );
+        if (matched) {
+          areaSelect.value = matched.value;
+        }
+      }
+      const nameInput = document.getElementById("full_name");
+      if (nameInput) {
+        setTimeout(() => nameInput.focus({ preventScroll: true }), 400);
+      }
+    });
+  });
 
   if (!form) return;
 

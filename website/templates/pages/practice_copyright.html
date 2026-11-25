@@ -1,0 +1,43 @@
+{% extends "layouts/practice_area.html" %}
+{% from "partials/practice_macros.html" import services_section, prose_section, faq_section %}
+
+{% set active_practice = "copyright" %}
+{% set hero_title = "Copyright Registration & Enforcement" %}
+{% set lead_paragraphs = [
+  "Copyright protects original creative work: books, music, films, artwork, photographs and software.",
+  "Auromaa Associates helps authors, artists, musicians, developers and businesses register their copyright in India and internationally, and enforce it when others copy their work. Our copyright lawyers handle everything from the first filing to litigation."
+] %}
+
+{% set cta_heading = "Protect Your Creative Work" %}
+{% set cta_line = "Talk to a copyright lawyer about registering or enforcing your rights." %}
+{% set cta_buttons = [
+  {"label": "Register Your Copyright", "primary": true, "preselect": "Copyright"},
+  {"label": "Report Infringement", "primary": false, "preselect": ""}
+] %}
+{% set cta_small_print = "This page gives general information and is not legal advice. Official fees and rules are set by each copyright office and may change." %}
+
+{% block content %}
+  {{ services_section("Our Copyright Services", [
+    {"label": "Copyright registration:", "text": "preparing and filing applications with copyright offices, including copyright registration online, and following them through until the work is registered."},
+    {"label": "Logo and artwork clearance:", "text": "obtaining the clearances some offices require when an artistic work, such as a logo, is used on goods or services."},
+    {"label": "Opinions:", "text": "advice on ownership, originality and whether a use is permitted."},
+    {"label": "Assignments and licences:", "text": "drafting and negotiating agreements so you can sell or license your work safely."},
+    {"label": "Copyright infringement:", "text": "infringement analysis, legal notices, takedown requests and court action."}
+  ], "bg-white") }}
+
+  {{ prose_section("What We Protect", [], [
+    {"label": "Books and writing.", "text": "If you are wondering how to copyright a book, in most countries your work is protected as soon as it is written. Registration gives you official, dated proof of authorship, and in some countries, such as the United States, it is needed before you can sue."},
+    {"label": "Music.", "text": "Copyright for music covers both the composition and lyrics, and the sound recording, which are registered separately."},
+    {"label": "Software.", "text": "Software copyright protects source code as a literary work, which helps when code is copied or a developer leaves with it."},
+    {"label": "Films, art and photographs.", "text": "Each can be registered as its own category of work."}
+  ], "", "bg-slate-50") }}
+
+  {{ prose_section("YouTube Copyright Strikes", [
+    "A YouTube copyright strike can remove your video and, after three strikes, put your channel at risk. If your content was taken down by mistake, or your use is lawful, we can help you file a counter-notification. If someone has copied your videos, we can file removal requests on your behalf."
+  ], [], "", "bg-white") }}
+
+  {{ faq_section("Frequently Asked Questions", [
+    {"question": "What are the copyright registration fees?", "answer": "Official fees vary by country and by type of work, and are usually modest compared with patents or trademarks. We give you a full estimate, including official and professional fees, before filing."},
+    {"question": "Is copyright registration compulsory?", "answer": "In most countries, no. Copyright exists once the work is created, but registration is strong evidence of ownership if you ever need to enforce it."}
+  ], "bg-slate-50") }}
+{% endblock %}

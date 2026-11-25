@@ -1,0 +1,44 @@
+{% extends "layouts/practice_area.html" %}
+{% from "partials/practice_macros.html" import services_section, prose_section, faq_section %}
+
+{% set active_practice = "startup-msme" %}
+{% set hero_title = "Startup & MSME IP Filings" %}
+{% set lead_paragraphs = [
+  "Your brand, technology and designs are often worth more than anything else your business owns.",
+  "Auromaa Associates helps start-ups and MSMEs protect them early and affordably, with trademark, patent, design and copyright filings in India and abroad. We also help you claim the fee concessions and government support available to smaller businesses, so your IP budget goes further."
+] %}
+
+{% set cta_heading = "Protect Your Startup's IP" %}
+{% set cta_line = "Tell us about your business, and we will suggest what to protect first and what it will cost." %}
+{% set cta_buttons = [
+  {"label": "Book an IP Audit", "primary": true, "preselect": "Startup & MSME"},
+  {"label": "Send an Enquiry", "primary": false, "preselect": ""}
+] %}
+{% set cta_small_print = "This page gives general information and is not legal advice. Fee concessions and government schemes are set by the authorities and may change." %}
+
+{% block content %}
+  {{ services_section("IP Services for Startups and MSMEs", [
+    {"label": "IP audit and strategy:", "text": "we review what you have, what is worth protecting, and what to file first."},
+    {"label": "Trademark registration for startups:", "text": "searches and filings to secure your brand name and logo before launch."},
+    {"label": "Patent filing for startups:", "text": "patentability searches, provisional applications and complete filings, including expedited examination."},
+    {"label": "Design and copyright registration:", "text": "protecting product designs, software, content and creative work."},
+    {"label": "Founder and employee agreements:", "text": "assignment and confidentiality agreements so the IP your team creates belongs to the company."},
+    {"label": "International filings:", "text": "PCT, Madrid Protocol and foreign filings when you are ready to expand."}
+  ], "bg-white") }}
+
+  {{ prose_section("Fee Concessions for Startups and MSMEs in India", [], [
+    {"label": "Start-ups:", "text": "DPIIT-recognised start-ups pay about 80% less in official patent fees than large companies, and half the standard trademark filing fee."},
+    {"label": "MSMEs:", "text": "MSMEs registered under Udyam can claim the reduced small-entity patent fees, and micro and small enterprises qualify for the lower trademark fee."},
+    {"label": "Faster patents:", "text": "start-ups can request expedited patent examination for a faster decision."},
+    {"label": "MSME reimbursement:", "text": "under the MSME Innovative Scheme, Udyam-registered MSMEs can claim reimbursement of registration costs, up to INR 1 lakh for an Indian patent and INR 5 lakh for a foreign patent, with smaller amounts for trademarks, designs and GIs."}
+  ], "We prepare the documents needed to claim each concession and file at the right rate from the start.", "bg-slate-50") }}
+
+  {{ prose_section("Why Early IP Filing Matters", [
+    "Investors check who owns your IP before they invest. A brand name you have not registered can be taken by someone else, and an invention you show or sell before filing may no longer be patentable. Filing early costs far less than rebranding or losing an invention."
+  ], [], "", "bg-white") }}
+
+  {{ faq_section("Frequently Asked Questions", [
+    {"question": "Is the SIPP scheme still available?", "answer": "The government-funded facilitator scheme for start-ups (SIPP) ended on 31 March 2026. The statutory fee concessions and expedited examination continue."},
+    {"question": "Do I need DPIIT recognition to get lower fees?", "answer": "For patents, start-ups need DPIIT recognition, while MSMEs can qualify through Udyam registration. Individuals also pay the lower rate."}
+  ], "bg-slate-50") }}
+{% endblock %}

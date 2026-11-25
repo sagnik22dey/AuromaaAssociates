@@ -38,6 +38,7 @@ HTML_ROUTES = [
     "/practice-areas/geographical-indications",
     "/practice-areas/plant-varieties",
     "/practice-areas/semiconductor-ic-layout",
+    "/practice-areas/startup-msme",
     "/ipr-abstract",
     "/faq",
     "/news",
@@ -416,4 +417,103 @@ async def test_november_content_updates(client: AsyncClient):
     redirect_res = await client.get("/advisors-instructors", follow_redirects=False)
     assert redirect_res.status_code == 302
     assert redirect_res.headers.get("location") == "/our-team#partners"
+
+
+@pytest.mark.anyio
+async def test_seven_practice_area_pages_content_and_cta(client: AsyncClient):
+    """Verify all implemented practice area pages render document copy, CTA preselect hooks, and enquiry form."""
+    expected_pages = [
+        (
+            "/practice-areas/patent",
+            "Patent Filing and Prosecution",
+            ["Our Patent Services", "How to Get a Patent", "Patents for Startups", "Software Patents", "Frequently Asked Questions", "Talk to Our Patent Team"],
+            "Request a Patent Search",
+            "Patent",
+            "This page gives general information and is not legal advice. Official fees and rules are set by each patent office and may change.",
+        ),
+        (
+            "/practice-areas/trademark",
+            "Trademark Registration & Protection Services",
+            ["Our Trademark Services", "How to Register a Trademark", "Trademark Registration for Startups and MSMEs", "Frequently Asked Questions", "Talk to a Trademark Attorney"],
+            "Request a Trademark Search",
+            "Trademark",
+            "This page gives general information and is not legal advice. Official fees are set by the Trade Marks Registry and may change.",
+        ),
+        (
+            "/practice-areas/copyright",
+            "Copyright Registration & Enforcement",
+            ["Our Copyright Services", "What We Protect", "YouTube Copyright Strikes", "Frequently Asked Questions", "Protect Your Creative Work"],
+            "Register Your Copyright",
+            "Copyright",
+            "This page gives general information and is not legal advice. Official fees and rules are set by each copyright office and may change.",
+        ),
+        (
+            "/practice-areas/industrial-design",
+            "Industrial Design Registration",
+            ["Our Design Services", "Design Registration or Design Patent?", "What Makes a Design Registrable", "Frequently Asked Questions", "Protect Your Product Design"],
+            "Register Your Design",
+            "Design",
+            "This page gives general information and is not legal advice. Official fees and rules are set by each design office and may change.",
+        ),
+        (
+            "/practice-areas/geographical-indications",
+            "Geographical Indication (GI) Registration",
+            ["Our GI Services", "How to Get a GI Tag", "Frequently Asked Questions", "Protect Your Region's Product"],
+            "Check GI Eligibility",
+            "GI",
+            "This page gives general information and is not legal advice. Rules vary by country and may change.",
+        ),
+        (
+            "/practice-areas/plant-varieties",
+            "Plant Variety Registration & Farmers' Rights Protection",
+            ["Our Plant Variety Services", "Which Varieties Can Be Registered", "Rights for Breeders and Farmers", "Frequently Asked Questions", "Register Your Plant Variety"],
+            "Check Eligibility",
+            "Plant Variety",
+            "This page gives general information and is not legal advice.",
+        ),
+        (
+            "/practice-areas/semiconductor-ic-layout",
+            "Semiconductor IC Layout Design Registration",
+            ["Our Layout Design Services", "How Layout Designs Are Protected", "Layout Design or Patent?", "Frequently Asked Questions", "Protect Your Chip Design"],
+            "Check Eligibility",
+            "IC Layout",
+            "This page gives general information and is not legal advice.",
+        ),
+        (
+            "/practice-areas/startup-msme",
+            "Startup & MSME IP Filings",
+            ["IP Services for Startups and MSMEs", "Fee Concessions for Startups and MSMEs in India", "Why Early IP Filing Matters", "Frequently Asked Questions", "Protect Your Startup's IP"],
+            "Book an IP Audit",
+            "Startup & MSME",
+            "This page gives general information and is not legal advice. Fee concessions and government schemes are set by the authorities and may change.",
+        ),
+    ]
+
+    for route, h1_text, h2_texts, preselect_label, preselect_value, small_print in expected_pages:
+        res = await client.get(route)
+        assert res.status_code == 200
+        assert "Return to Home" not in res.text, f"Route {route} is still using placeholder.html"
+
+        soup = BeautifulSoup(res.text, "html.parser")
+        h1 = soup.find("h1")
+        assert h1 is not None and h1.get_text(strip=True) == h1_text
+
+        page_h2s = [h.get_text(strip=True) for h in soup.find_all("h2")]
+        for expected_h2 in h2_texts:
+            assert expected_h2 in page_h2s, f"Missing H2 '{expected_h2}' on {route}"
+
+        preselect_link = soup.find("a", attrs={"data-preselect-area": preselect_value})
+        assert preselect_link is not None, f"Missing data-preselect-area='{preselect_value}' on {route}"
+        assert preselect_label in preselect_link.get_text(strip=True)
+        assert preselect_link.get("href") == "#enquiry"
+
+        assert small_print in res.text, f"Missing CTA small print on {route}"
+
+        enquiry_form = soup.find("form", attrs={"id": "enquiry-form"})
+        assert enquiry_form is not None, f"Missing embedded enquiry form on {route}"
+        area_select = soup.find("select", attrs={"id": "area_of_interest"})
+        assert area_select is not None
+        option_values = [opt.get("value") for opt in area_select.find_all("option")]
+        assert preselect_value in option_values
+
 

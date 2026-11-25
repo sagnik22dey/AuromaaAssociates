@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  {% include "partials/head.html" %}
+</head>
+<body class="bg-background text-on-surface antialiased">
+
+  {% include "partials/disclaimer_modal.html" %}
+  {% include "partials/callback_modal.html" %}
+  {% include "partials/topbar.html" %}
+  {% set active_page = "practice-areas" %}
+  {% include "partials/nav.html" %}
+
+  <section class="relative bg-navy-950 text-white py-20 px-6 lg:px-12 border-b border-slate-800 overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(rgba(212, 175, 55, 0.4) 1px, transparent 1px); background-size: 32px 32px;"></div>
+    <div class="max-w-[1280px] mx-auto relative z-10">
+      <nav class="flex items-center space-x-2 text-xs font-nav text-slate-400 uppercase tracking-wider mb-6" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-gold-400 transition-colors">Home</a>
+        <span>/</span>
+        <a href="/practice-areas" class="hover:text-gold-400 transition-colors">Practice Areas</a>
+        <span>/</span>
+        <span class="text-gold-400 font-semibold">{{ hero_title }}</span>
+      </nav>
+      <div class="max-w-3xl">
+        <h1 class="font-headline text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 tracking-tight leading-tight">
+          {{ hero_title }}
+        </h1>
+        <div class="space-y-4 font-body text-lg text-slate-300 max-w-2xl leading-relaxed font-light">
+          {% for paragraph in lead_paragraphs %}
+          <p>{{ paragraph }}</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include "partials/practice_subnav.html" %}
+
+  {% block content %}{% endblock %}
+
+  {% include "partials/practice_cta.html" %}
+  {% include "partials/enquiry_section.html" %}
+  {% include "partials/footer.html" %}
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

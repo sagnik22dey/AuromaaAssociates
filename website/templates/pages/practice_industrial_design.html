@@ -1,0 +1,42 @@
+{% extends "layouts/practice_area.html" %}
+{% from "partials/practice_macros.html" import services_section, prose_section, faq_section %}
+
+{% set active_practice = "industrial-design" %}
+{% set hero_title = "Industrial Design Registration" %}
+{% set lead_paragraphs = [
+  "A product's shape, pattern and look are often what customers recognise first. Industrial design registration protects that appearance from copying.",
+  "Auromaa Associates helps manufacturers, designers and brands with design registration in India and internationally, and enforces those rights when competitors copy them."
+] %}
+
+{% set cta_heading = "Protect Your Product Design" %}
+{% set cta_line = "Tell us about your design and the markets you sell in, and we will explain your options." %}
+{% set cta_buttons = [
+  {"label": "Register Your Design", "primary": true, "preselect": "Design"},
+  {"label": "Send an Enquiry", "primary": false, "preselect": ""}
+] %}
+{% set cta_small_print = "This page gives general information and is not legal advice. Official fees and rules are set by each design office and may change." %}
+
+{% block content %}
+  {{ services_section("Our Design Services", [
+    {"label": "Novelty searches:", "text": "checking existing designs worldwide before you file."},
+    {"label": "Opinions:", "text": "advice on registrability, design infringement and related proceedings."},
+    {"label": "Filing and prosecution:", "text": "preparing and filing design applications in India and other countries, and following them through to registration and publication."},
+    {"label": "Renewals:", "text": "tracking deadlines so your protection does not lapse."},
+    {"label": "Cancellation proceedings:", "text": "challenging conflicting designs, or defending yours."},
+    {"label": "Enforcement:", "text": "design infringement analysis, legal notices and design litigation."},
+    {"label": "Transactions:", "text": "assignments, licences and other design agreements."}
+  ], "bg-white") }}
+
+  {{ prose_section("Design Registration or Design Patent?", [
+    "They protect the same thing: how a product looks, not how it works. Most countries call this a registered design. The United States calls it a design patent. If you sell in several markets, we help you choose where to file and coordinate each application, so you are protected under the right name in every country."
+  ], [], "", "bg-slate-50") }}
+
+  {{ prose_section("What Makes a Design Registrable", [
+    "The design must be new and original, and visible on the finished product. Publishing, selling or showing the product before you file can destroy its novelty in many countries, so speak to us before your launch."
+  ], [], "", "bg-white") }}
+
+  {{ faq_section("Frequently Asked Questions", [
+    {"question": "What are the design registration fees?", "answer": "Official fees vary by country and by the number of designs in an application. We give you a full estimate, including official and professional fees, before filing."},
+    {"question": "How long does design protection last?", "answer": "It depends on the country. Protection runs for a fixed term, often with renewals, and we track every deadline for you."}
+  ], "bg-slate-50") }}
+{% endblock %}

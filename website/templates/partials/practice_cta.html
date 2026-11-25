@@ -1,0 +1,27 @@
+<section class="py-16 bg-navy-950 text-white relative overflow-hidden">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-12 relative z-10">
+    <div class="bg-navy-900/90 border border-slate-800 rounded-2xl p-10 lg:p-14 text-center max-w-3xl mx-auto shadow-2xl">
+      <h2 class="font-headline text-3xl md:text-4xl font-semibold text-white mb-4">{{ cta_heading }}</h2>
+      <p class="font-body text-slate-300 text-base mb-8 leading-relaxed max-w-xl mx-auto">
+        {{ cta_line }}
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        {% for btn in cta_buttons %}
+        <a
+          href="#enquiry"
+          {% if btn.preselect %}data-preselect-area="{{ btn.preselect }}"{% endif %}
+          class="w-full sm:w-auto inline-flex items-center justify-center {% if btn.primary %}bg-gold-500 hover:bg-gold-400 text-navy-950 shadow-md{% else %}bg-transparent hover:bg-navy-800 text-slate-200 border border-slate-700 hover:border-gold-500{% endif %} px-8 py-3.5 rounded-lg font-nav text-xs font-bold uppercase tracking-wider transition-all active:scale-95"
+        >
+          <span>{{ btn.label }}</span>
+          <span class="material-symbols-outlined text-base ml-2">{% if btn.primary %}send{% else %}arrow_forward{% endif %}</span>
+        </a>
+        {% endfor %}
+      </div>
+
+      <p class="font-body text-[11px] text-slate-400 mt-8 max-w-xl mx-auto leading-relaxed border-t border-slate-800 pt-6">
+        {{ cta_small_print }}
+      </p>
+    </div>
+  </div>
+</section>
